@@ -16,10 +16,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /*
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    */
     return YES;
 }
 
@@ -48,9 +50,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+    //[self saveContext];
 }
 
+/*
 - (void)saveContext
 {
     NSError *error = nil;
@@ -64,11 +67,13 @@
         } 
     }
 }
+ */
 
-#pragma mark - Core Data stack
+//#pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
+/*
 - (NSManagedObjectContext *)managedObjectContext
 {
     if (_managedObjectContext != nil) {
@@ -82,10 +87,13 @@
     }
     return _managedObjectContext;
 }
-
+*/
 // Returns the managed object model for the application.
 // If the model doesn't already exist, it is created from the application's model.
-- (NSManagedObjectModel *)managedObjectModel
+
+
+/*
+ - (NSManagedObjectModel *)managedObjectModel
 {
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
@@ -94,9 +102,12 @@
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
+ 
+ */
 
 // Returns the persistent store coordinator for the application.
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
+/*
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
     if (_persistentStoreCoordinator != nil) {
@@ -108,6 +119,7 @@
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+ */
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -131,12 +143,16 @@
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
+/*
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }    
     
     return _persistentStoreCoordinator;
 }
+*/
+
+
 
 #pragma mark - Application's Documents directory
 
@@ -145,5 +161,6 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
 
 @end

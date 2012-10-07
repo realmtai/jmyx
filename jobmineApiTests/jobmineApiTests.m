@@ -7,6 +7,8 @@
 //
 
 #import "jobmineApiTests.h"
+#import "URLLoader.h"
+
 
 @implementation jobmineApiTests
 
@@ -26,7 +28,6 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in jobmineApiTests");
 }
 
 @end

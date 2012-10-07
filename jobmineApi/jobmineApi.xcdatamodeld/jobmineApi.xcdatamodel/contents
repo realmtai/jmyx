@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="JobmineApplicationDetail" representedClassName="JobmineApplicationDetail" syncable="YES">
+        <attribute name="applicationStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employmentLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employmentUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interviewDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="interviewer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interviewInstructions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interviewLength" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="interviewRoom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interviewTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="interviewType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="jID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="jobStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jobTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastDayToApply" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="numberOfApplications" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfOpennings" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="workingTerm" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="inTheseCategory" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="JobmineInfo" inverseName="refreToApplication" inverseEntity="JobmineInfo" syncable="YES"/>
+    </entity>
+    <entity name="JobmineInfo" representedClassName="JobmineInfo" syncable="YES">
+        <attribute name="applicationListing" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="jID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="refreToApplication" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="JobmineApplicationDetail" inverseName="inTheseCategory" inverseEntity="JobmineApplicationDetail" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="JobmineApplicationDetail" positionX="-245" positionY="33" width="128" height="345"/>
+        <element name="JobmineInfo" positionX="0" positionY="0" width="128" height="105"/>
+    </elements>
 </model>

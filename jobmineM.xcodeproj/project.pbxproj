@@ -1,0 +1,757 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E86FF2A215E476AD004A18DB /* URLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AFF15E186F400442360 /* URLLoader.m */; };
+		E8700F9515EB47A5000E60DB /* Iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8700F9415EB47A5000E60DB /* Iphone.storyboard */; };
+		E8702B8E161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */; };
+		E8702B92161E7E72009A1522 /* JobmineApplicationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E8702B91161E7E72009A1522 /* JobmineApplicationDetail.m */; };
+		E87075AD15E8382C00BF1483 /* RequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E87075AC15E8382C00BF1483 /* RequestFactory.m */; };
+		E8707D8C1615241D00DEBC47 /* JobmineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8707D8B1615241D00DEBC47 /* JobmineInfo.m */; };
+		E8707EB4161FA96000D76738 /* jobmineSectionNumberToUICellID.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */; };
+		E870955F15EECFC300DE4BED /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E870955A15EECFC200DE4BED /* TFHppleElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E870956015EECFC300DE4BED /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = E870955C15EECFC200DE4BED /* TFHpple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E870956115EECFC300DE4BED /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E870955E15EECFC300DE4BED /* XPathQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E870956615EED05600DE4BED /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E870956515EED05600DE4BED /* libxml2.2.dylib */; };
+		E870B751161FA430007915C1 /* jobmineAllApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E870B750161FA430007915C1 /* jobmineAllApplicationCell.m */; };
+		E870BDFC15EBD86B0047D35E /* JobmineListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E870BDFB15EBD86B0047D35E /* JobmineListingViewController.m */; };
+		E870BE0115EBDD8B0047D35E /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E870BE0015EBDD8B0047D35E /* CoreDataTableViewController.m */; };
+		E870D0A315E96B7900BC5270 /* Oracle.m in Sources */ = {isa = PBXBuildFile; fileRef = E870D0A215E96B7900BC5270 /* Oracle.m */; };
+		E870D0AB15E9825F00BC5270 /* NSString+extraction.m in Sources */ = {isa = PBXBuildFile; fileRef = E870D0AA15E9825F00BC5270 /* NSString+extraction.m */; };
+		E870F97D1620C25B007B891E /* bug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E870F97C1620C25B007B891E /* bug.jpg */; };
+		E870F9801620C7CB007B891E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E870F97F1620C7CB007B891E /* MessageUI.framework */; };
+		E8717354160EC52400A3935C /* jobmineApplicationShortListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8717353160EC52400A3935C /* jobmineApplicationShortListCell.m */; };
+		E8717358160ECCDC00A3935C /* jobmineCellConfigetor.m in Sources */ = {isa = PBXBuildFile; fileRef = E8717357160ECCDC00A3935C /* jobmineCellConfigetor.m */; };
+		E87289D115E5EF3B0087184B /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289C215E5EF3A0087184B /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289D215E5EF3B0087184B /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289C415E5EF3A0087184B /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289D315E5EF3B0087184B /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289C615E5EF3A0087184B /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289D415E5EF3B0087184B /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289C815E5EF3A0087184B /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289D515E5EF3B0087184B /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289CA15E5EF3A0087184B /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289D615E5EF3B0087184B /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289CC15E5EF3A0087184B /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289D715E5EF3B0087184B /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289CE15E5EF3B0087184B /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289D815E5EF3B0087184B /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289D015E5EF3B0087184B /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289DC15E5F0100087184B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E87289DB15E5F0100087184B /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E87289DE15E5F09E0087184B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289DD15E5F09E0087184B /* CFNetwork.framework */; };
+		E87289E015E5F10A0087184B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289DF15E5F10A0087184B /* SystemConfiguration.framework */; };
+		E87289E215E5F1100087184B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289E115E5F1100087184B /* MobileCoreServices.framework */; };
+		E87289E415E5F12E0087184B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289E315E5F12E0087184B /* libz.dylib */; };
+		E8734BEA15EAA18800DA7466 /* NSString+extraction.m in Sources */ = {isa = PBXBuildFile; fileRef = E870D0AA15E9825F00BC5270 /* NSString+extraction.m */; };
+		E87DD87415F157A800ABB02A /* TFHpple+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */; };
+		E8B376CC15DEEBAA00E2ECD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */; };
+		E8B376CE15DEEBAA00E2ECD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */; };
+		E8B376D015DEEBAA00E2ECD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CF15DEEBAA00E2ECD8 /* CoreGraphics.framework */; };
+		E8B376D215DEEBAA00E2ECD8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376D115DEEBAA00E2ECD8 /* CoreData.framework */; };
+		E8B376D815DEEBAA00E2ECD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8B376D615DEEBAA00E2ECD8 /* InfoPlist.strings */; };
+		E8B376DA15DEEBAA00E2ECD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B376D915DEEBAA00E2ECD8 /* main.m */; };
+		E8B376DE15DEEBAA00E2ECD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B376DD15DEEBAA00E2ECD8 /* AppDelegate.m */; };
+		E8B376E115DEEBAA00E2ECD8 /* jobmineApi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8B376DF15DEEBAA00E2ECD8 /* jobmineApi.xcdatamodeld */; };
+		E8B376E915DEEBAA00E2ECD8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376E815DEEBAA00E2ECD8 /* SenTestingKit.framework */; };
+		E8B376EA15DEEBAA00E2ECD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */; };
+		E8B376EB15DEEBAA00E2ECD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */; };
+		E8B376EC15DEEBAA00E2ECD8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376D115DEEBAA00E2ECD8 /* CoreData.framework */; };
+		E8B376F415DEEBAA00E2ECD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8B376F215DEEBAA00E2ECD8 /* InfoPlist.strings */; };
+		E8B376F715DEEBAA00E2ECD8 /* jobmineApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B376F615DEEBAA00E2ECD8 /* jobmineApiTests.m */; };
+		E8B46AF915E16F4B00442360 /* jobmineApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AF815E16F4B00442360 /* jobmineApi.m */; };
+		E8B46AFD15E170EA00442360 /* jobmineDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AFC15E170EA00442360 /* jobmineDictionary.m */; };
+		E8B46B0015E186F400442360 /* URLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AFF15E186F400442360 /* URLLoader.m */; };
+		E8C86C9815E925DB00EE54B3 /* RequestResponser.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C86C9715E925DB00EE54B3 /* RequestResponser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8B376ED15DEEBAA00E2ECD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8B376BE15DEEBAA00E2ECD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8B376C615DEEBAA00E2ECD8;
+			remoteInfo = jobmineApi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8700F9415EB47A5000E60DB /* Iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone.storyboard; sourceTree = "<group>"; };
+		E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sectionHeaderTranslationDictionary.plist; sourceTree = "<group>"; };
+		E8702B90161E7E72009A1522 /* JobmineApplicationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineApplicationDetail.h; sourceTree = "<group>"; };
+		E8702B91161E7E72009A1522 /* JobmineApplicationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineApplicationDetail.m; sourceTree = "<group>"; };
+		E87075AB15E8382C00BF1483 /* RequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestFactory.h; sourceTree = "<group>"; };
+		E87075AC15E8382C00BF1483 /* RequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestFactory.m; sourceTree = "<group>"; };
+		E8707D8A1615241D00DEBC47 /* JobmineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineInfo.h; sourceTree = "<group>"; };
+		E8707D8B1615241D00DEBC47 /* JobmineInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineInfo.m; sourceTree = "<group>"; };
+		E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jobmineSectionNumberToUICellID.plist; sourceTree = "<group>"; };
+		E870955915EECFC200DE4BED /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		E870955A15EECFC200DE4BED /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		E870955B15EECFC200DE4BED /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		E870955C15EECFC200DE4BED /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		E870955D15EECFC300DE4BED /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		E870955E15EECFC300DE4BED /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		E870956515EED05600DE4BED /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		E870B74F161FA430007915C1 /* jobmineAllApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineAllApplicationCell.h; sourceTree = "<group>"; };
+		E870B750161FA430007915C1 /* jobmineAllApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineAllApplicationCell.m; sourceTree = "<group>"; };
+		E870BDFA15EBD86B0047D35E /* JobmineListingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobmineListingViewController.h; path = jobmineApi/JobmineListingViewController.h; sourceTree = "<group>"; };
+		E870BDFB15EBD86B0047D35E /* JobmineListingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobmineListingViewController.m; path = jobmineApi/JobmineListingViewController.m; sourceTree = "<group>"; };
+		E870BDFF15EBDD8B0047D35E /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		E870BE0015EBDD8B0047D35E /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		E870D0A115E96B7900BC5270 /* Oracle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oracle.h; sourceTree = "<group>"; };
+		E870D0A215E96B7900BC5270 /* Oracle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Oracle.m; sourceTree = "<group>"; };
+		E870D0A915E9825F00BC5270 /* NSString+extraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extraction.h"; sourceTree = "<group>"; };
+		E870D0AA15E9825F00BC5270 /* NSString+extraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extraction.m"; sourceTree = "<group>"; };
+		E870F97C1620C25B007B891E /* bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bug.jpg; sourceTree = "<group>"; };
+		E870F97F1620C7CB007B891E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E8717352160EC52400A3935C /* jobmineApplicationShortListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineApplicationShortListCell.h; sourceTree = "<group>"; };
+		E8717353160EC52400A3935C /* jobmineApplicationShortListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineApplicationShortListCell.m; sourceTree = "<group>"; };
+		E8717356160ECCDC00A3935C /* jobmineCellConfigetor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineCellConfigetor.h; sourceTree = "<group>"; };
+		E8717357160ECCDC00A3935C /* jobmineCellConfigetor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineCellConfigetor.m; sourceTree = "<group>"; };
+		E87289BD15E5EF3A0087184B /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		E87289BE15E5EF3A0087184B /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		E87289BF15E5EF3A0087184B /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		E87289C015E5EF3A0087184B /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		E87289C115E5EF3A0087184B /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		E87289C215E5EF3A0087184B /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		E87289C315E5EF3A0087184B /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		E87289C415E5EF3A0087184B /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		E87289C515E5EF3A0087184B /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		E87289C615E5EF3A0087184B /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		E87289C715E5EF3A0087184B /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		E87289C815E5EF3A0087184B /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		E87289C915E5EF3A0087184B /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		E87289CA15E5EF3A0087184B /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		E87289CB15E5EF3A0087184B /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		E87289CC15E5EF3A0087184B /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		E87289CD15E5EF3B0087184B /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		E87289CE15E5EF3B0087184B /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		E87289CF15E5EF3B0087184B /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		E87289D015E5EF3B0087184B /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		E87289DA15E5F0100087184B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E87289DB15E5F0100087184B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E87289DD15E5F09E0087184B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E87289DF15E5F10A0087184B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E87289E115E5F1100087184B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E87289E315E5F12E0087184B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E87DD87215F157A800ABB02A /* TFHpple+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TFHpple+CoreData.h"; sourceTree = "<group>"; };
+		E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TFHpple+CoreData.m"; sourceTree = "<group>"; };
+		E8B376C715DEEBAA00E2ECD8 /* jobmineM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jobmineM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E8B376CF15DEEBAA00E2ECD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E8B376D115DEEBAA00E2ECD8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E8B376D515DEEBAA00E2ECD8 /* jobmineM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jobmineM-Info.plist"; sourceTree = "<group>"; };
+		E8B376D715DEEBAA00E2ECD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8B376D915DEEBAA00E2ECD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8B376DB15DEEBAA00E2ECD8 /* jobmineM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jobmineM-Prefix.pch"; sourceTree = "<group>"; };
+		E8B376DC15DEEBAA00E2ECD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E8B376DD15DEEBAA00E2ECD8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E8B376E015DEEBAA00E2ECD8 /* jobmineApi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = jobmineApi.xcdatamodel; sourceTree = "<group>"; };
+		E8B376E715DEEBAA00E2ECD8 /* jobmineMTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jobmineMTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B376E815DEEBAA00E2ECD8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E8B376F115DEEBAA00E2ECD8 /* jobmineMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jobmineMTests-Info.plist"; sourceTree = "<group>"; };
+		E8B376F315DEEBAA00E2ECD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8B376F515DEEBAA00E2ECD8 /* jobmineApiTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jobmineApiTests.h; sourceTree = "<group>"; };
+		E8B376F615DEEBAA00E2ECD8 /* jobmineApiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jobmineApiTests.m; sourceTree = "<group>"; };
+		E8B46AF715E16F4B00442360 /* jobmineApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineApi.h; sourceTree = "<group>"; };
+		E8B46AF815E16F4B00442360 /* jobmineApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineApi.m; sourceTree = "<group>"; };
+		E8B46AFB15E170EA00442360 /* jobmineDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineDictionary.h; sourceTree = "<group>"; };
+		E8B46AFC15E170EA00442360 /* jobmineDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineDictionary.m; sourceTree = "<group>"; };
+		E8B46AFE15E186F400442360 /* URLLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLLoader.h; sourceTree = "<group>"; };
+		E8B46AFF15E186F400442360 /* URLLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLLoader.m; sourceTree = "<group>"; };
+		E8C86C9615E925DB00EE54B3 /* RequestResponser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestResponser.h; sourceTree = "<group>"; };
+		E8C86C9715E925DB00EE54B3 /* RequestResponser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestResponser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8B376C415DEEBAA00E2ECD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E870F9801620C7CB007B891E /* MessageUI.framework in Frameworks */,
+				E870956615EED05600DE4BED /* libxml2.2.dylib in Frameworks */,
+				E87289E415E5F12E0087184B /* libz.dylib in Frameworks */,
+				E8B376D015DEEBAA00E2ECD8 /* CoreGraphics.framework in Frameworks */,
+				E87289E215E5F1100087184B /* MobileCoreServices.framework in Frameworks */,
+				E87289E015E5F10A0087184B /* SystemConfiguration.framework in Frameworks */,
+				E87289DE15E5F09E0087184B /* CFNetwork.framework in Frameworks */,
+				E8B376CC15DEEBAA00E2ECD8 /* UIKit.framework in Frameworks */,
+				E8B376CE15DEEBAA00E2ECD8 /* Foundation.framework in Frameworks */,
+				E8B376D215DEEBAA00E2ECD8 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B376E315DEEBAA00E2ECD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B376E915DEEBAA00E2ECD8 /* SenTestingKit.framework in Frameworks */,
+				E8B376EA15DEEBAA00E2ECD8 /* UIKit.framework in Frameworks */,
+				E8B376EB15DEEBAA00E2ECD8 /* Foundation.framework in Frameworks */,
+				E8B376EC15DEEBAA00E2ECD8 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E870956315EECFCE00DE4BED /* HTML Paser + coreData update */ = {
+			isa = PBXGroup;
+			children = (
+				E870957F15EEE73000DE4BED /* storageSystem */,
+				E87DD87215F157A800ABB02A /* TFHpple+CoreData.h */,
+				E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */,
+				E87746D415F453C300E9F5A7 /* HTML Parser */,
+			);
+			name = "HTML Paser + coreData update";
+			sourceTree = "<group>";
+		};
+		E870957F15EEE73000DE4BED /* storageSystem */ = {
+			isa = PBXGroup;
+			children = (
+				E870958015EEE75800DE4BED /* generatedFile */,
+				E8B376DF15DEEBAA00E2ECD8 /* jobmineApi.xcdatamodeld */,
+			);
+			name = storageSystem;
+			sourceTree = "<group>";
+		};
+		E870958015EEE75800DE4BED /* generatedFile */ = {
+			isa = PBXGroup;
+			children = (
+				E8702B90161E7E72009A1522 /* JobmineApplicationDetail.h */,
+				E8702B91161E7E72009A1522 /* JobmineApplicationDetail.m */,
+				E8707D8A1615241D00DEBC47 /* JobmineInfo.h */,
+				E8707D8B1615241D00DEBC47 /* JobmineInfo.m */,
+			);
+			name = generatedFile;
+			sourceTree = "<group>";
+		};
+		E870BDFE15EBD8710047D35E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E870BE0215EBDD900047D35E /* coredata */,
+				E870BDFA15EBD86B0047D35E /* JobmineListingViewController.h */,
+				E870BDFB15EBD86B0047D35E /* JobmineListingViewController.m */,
+				E870F97C1620C25B007B891E /* bug.jpg */,
+				E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */,
+				E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */,
+				E8717355160ECA1100A3935C /* uiCellsAndConfingerator */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		E870BE0215EBDD900047D35E /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				E870BDFF15EBDD8B0047D35E /* CoreDataTableViewController.h */,
+				E870BE0015EBDD8B0047D35E /* CoreDataTableViewController.m */,
+			);
+			name = coredata;
+			sourceTree = "<group>";
+		};
+		E8717355160ECA1100A3935C /* uiCellsAndConfingerator */ = {
+			isa = PBXGroup;
+			children = (
+				E8717356160ECCDC00A3935C /* jobmineCellConfigetor.h */,
+				E8717357160ECCDC00A3935C /* jobmineCellConfigetor.m */,
+				E8717352160EC52400A3935C /* jobmineApplicationShortListCell.h */,
+				E8717353160EC52400A3935C /* jobmineApplicationShortListCell.m */,
+				E870B74F161FA430007915C1 /* jobmineAllApplicationCell.h */,
+				E870B750161FA430007915C1 /* jobmineAllApplicationCell.m */,
+			);
+			name = uiCellsAndConfingerator;
+			sourceTree = "<group>";
+		};
+		E87289A315E5EEB70087184B /* junk */ = {
+			isa = PBXGroup;
+			children = (
+				E8B376D415DEEBAA00E2ECD8 /* Supporting Files */,
+				E8B46AFE15E186F400442360 /* URLLoader.h */,
+				E8B46AFF15E186F400442360 /* URLLoader.m */,
+			);
+			name = junk;
+			path = jobmineApi;
+			sourceTree = "<group>";
+		};
+		E87289D915E5EF450087184B /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E87289DA15E5F0100087184B /* Reachability.h */,
+				E87289DB15E5F0100087184B /* Reachability.m */,
+				E87289BD15E5EF3A0087184B /* ASIHTTPRequestConfig.h */,
+				E87289BE15E5EF3A0087184B /* ASICacheDelegate.h */,
+				E87289BF15E5EF3A0087184B /* ASIHTTPRequestDelegate.h */,
+				E87289C015E5EF3A0087184B /* ASIProgressDelegate.h */,
+				E87289C115E5EF3A0087184B /* ASIAuthenticationDialog.h */,
+				E87289C215E5EF3A0087184B /* ASIAuthenticationDialog.m */,
+				E87289C315E5EF3A0087184B /* ASIInputStream.h */,
+				E87289C415E5EF3A0087184B /* ASIInputStream.m */,
+				E87289C515E5EF3A0087184B /* ASIFormDataRequest.h */,
+				E87289C615E5EF3A0087184B /* ASIFormDataRequest.m */,
+				E87289C715E5EF3A0087184B /* ASIHTTPRequest.h */,
+				E87289C815E5EF3A0087184B /* ASIHTTPRequest.m */,
+				E87289C915E5EF3A0087184B /* ASINetworkQueue.h */,
+				E87289CA15E5EF3A0087184B /* ASINetworkQueue.m */,
+				E87289CB15E5EF3A0087184B /* ASIDownloadCache.h */,
+				E87289CC15E5EF3A0087184B /* ASIDownloadCache.m */,
+				E87289CD15E5EF3B0087184B /* ASIDataDecompressor.h */,
+				E87289CE15E5EF3B0087184B /* ASIDataDecompressor.m */,
+				E87289CF15E5EF3B0087184B /* ASIDataCompressor.h */,
+				E87289D015E5EF3B0087184B /* ASIDataCompressor.m */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		E87746D415F453C300E9F5A7 /* HTML Parser */ = {
+			isa = PBXGroup;
+			children = (
+				E870955915EECFC200DE4BED /* TFHppleElement.h */,
+				E870955A15EECFC200DE4BED /* TFHppleElement.m */,
+				E870955B15EECFC200DE4BED /* TFHpple.h */,
+				E870955C15EECFC200DE4BED /* TFHpple.m */,
+				E870955D15EECFC300DE4BED /* XPathQuery.h */,
+				E870955E15EECFC300DE4BED /* XPathQuery.m */,
+			);
+			name = "HTML Parser";
+			sourceTree = "<group>";
+		};
+		E87FE51015E8ADF4009F0E80 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E8C86C9615E925DB00EE54B3 /* RequestResponser.h */,
+				E8C86C9715E925DB00EE54B3 /* RequestResponser.m */,
+				E87075AB15E8382C00BF1483 /* RequestFactory.h */,
+				E87075AC15E8382C00BF1483 /* RequestFactory.m */,
+				E8B46AFB15E170EA00442360 /* jobmineDictionary.h */,
+				E8B46AFC15E170EA00442360 /* jobmineDictionary.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		E8B376BC15DEEBAA00E2ECD8 = {
+			isa = PBXGroup;
+			children = (
+				E8700F9415EB47A5000E60DB /* Iphone.storyboard */,
+				E870BDFE15EBD8710047D35E /* UI */,
+				E8B376D315DEEBAA00E2ECD8 /* jobmineApi */,
+				E8B376EF15DEEBAA00E2ECD8 /* jobmineApiTests */,
+				E8B376CA15DEEBAA00E2ECD8 /* Frameworks */,
+				E8B376C815DEEBAA00E2ECD8 /* Products */,
+				E87289A315E5EEB70087184B /* junk */,
+			);
+			sourceTree = "<group>";
+		};
+		E8B376C815DEEBAA00E2ECD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8B376C715DEEBAA00E2ECD8 /* jobmineM.app */,
+				E8B376E715DEEBAA00E2ECD8 /* jobmineMTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8B376CA15DEEBAA00E2ECD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E870956515EED05600DE4BED /* libxml2.2.dylib */,
+				E87289E315E5F12E0087184B /* libz.dylib */,
+				E870F97F1620C7CB007B891E /* MessageUI.framework */,
+				E87289E115E5F1100087184B /* MobileCoreServices.framework */,
+				E87289DF15E5F10A0087184B /* SystemConfiguration.framework */,
+				E87289DD15E5F09E0087184B /* CFNetwork.framework */,
+				E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */,
+				E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */,
+				E8B376CF15DEEBAA00E2ECD8 /* CoreGraphics.framework */,
+				E8B376D115DEEBAA00E2ECD8 /* CoreData.framework */,
+				E8B376E815DEEBAA00E2ECD8 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8B376D315DEEBAA00E2ECD8 /* jobmineApi */ = {
+			isa = PBXGroup;
+			children = (
+				E87289D915E5EF450087184B /* ASIHTTPRequest */,
+				E8B376DC15DEEBAA00E2ECD8 /* AppDelegate.h */,
+				E8B376DD15DEEBAA00E2ECD8 /* AppDelegate.m */,
+				E8B46AF715E16F4B00442360 /* jobmineApi.h */,
+				E8B46AF815E16F4B00442360 /* jobmineApi.m */,
+				E870D0A115E96B7900BC5270 /* Oracle.h */,
+				E870D0A215E96B7900BC5270 /* Oracle.m */,
+				E870D0A915E9825F00BC5270 /* NSString+extraction.h */,
+				E870D0AA15E9825F00BC5270 /* NSString+extraction.m */,
+				E87FE51015E8ADF4009F0E80 /* Network */,
+				E870956315EECFCE00DE4BED /* HTML Paser + coreData update */,
+			);
+			path = jobmineApi;
+			sourceTree = "<group>";
+		};
+		E8B376D415DEEBAA00E2ECD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8B376D515DEEBAA00E2ECD8 /* jobmineM-Info.plist */,
+				E8B376D615DEEBAA00E2ECD8 /* InfoPlist.strings */,
+				E8B376D915DEEBAA00E2ECD8 /* main.m */,
+				E8B376DB15DEEBAA00E2ECD8 /* jobmineM-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8B376EF15DEEBAA00E2ECD8 /* jobmineApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8B376F515DEEBAA00E2ECD8 /* jobmineApiTests.h */,
+				E8B376F615DEEBAA00E2ECD8 /* jobmineApiTests.m */,
+				E8B376F015DEEBAA00E2ECD8 /* Supporting Files */,
+			);
+			path = jobmineApiTests;
+			sourceTree = "<group>";
+		};
+		E8B376F015DEEBAA00E2ECD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8B376F115DEEBAA00E2ECD8 /* jobmineMTests-Info.plist */,
+				E8B376F215DEEBAA00E2ECD8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8B376C615DEEBAA00E2ECD8 /* jobmineM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8B376FA15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineM" */;
+			buildPhases = (
+				E8B376C315DEEBAA00E2ECD8 /* Sources */,
+				E8B376C415DEEBAA00E2ECD8 /* Frameworks */,
+				E8B376C515DEEBAA00E2ECD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jobmineM;
+			productName = jobmineApi;
+			productReference = E8B376C715DEEBAA00E2ECD8 /* jobmineM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8B376E615DEEBAA00E2ECD8 /* jobmineMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8B376FD15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineMTests" */;
+			buildPhases = (
+				E8B376E215DEEBAA00E2ECD8 /* Sources */,
+				E8B376E315DEEBAA00E2ECD8 /* Frameworks */,
+				E8B376E415DEEBAA00E2ECD8 /* Resources */,
+				E8B376E515DEEBAA00E2ECD8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8B376EE15DEEBAA00E2ECD8 /* PBXTargetDependency */,
+			);
+			name = jobmineMTests;
+			productName = jobmineApiTests;
+			productReference = E8B376E715DEEBAA00E2ECD8 /* jobmineMTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8B376BE15DEEBAA00E2ECD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = edwin;
+			};
+			buildConfigurationList = E8B376C115DEEBAA00E2ECD8 /* Build configuration list for PBXProject "jobmineM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8B376BC15DEEBAA00E2ECD8;
+			productRefGroup = E8B376C815DEEBAA00E2ECD8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8B376C615DEEBAA00E2ECD8 /* jobmineM */,
+				E8B376E615DEEBAA00E2ECD8 /* jobmineMTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8B376C515DEEBAA00E2ECD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B376D815DEEBAA00E2ECD8 /* InfoPlist.strings in Resources */,
+				E8700F9515EB47A5000E60DB /* Iphone.storyboard in Resources */,
+				E8702B8E161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist in Resources */,
+				E8707EB4161FA96000D76738 /* jobmineSectionNumberToUICellID.plist in Resources */,
+				E870F97D1620C25B007B891E /* bug.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B376E415DEEBAA00E2ECD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B376F415DEEBAA00E2ECD8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E8B376E515DEEBAA00E2ECD8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8B376C315DEEBAA00E2ECD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B376DA15DEEBAA00E2ECD8 /* main.m in Sources */,
+				E8B376DE15DEEBAA00E2ECD8 /* AppDelegate.m in Sources */,
+				E8B376E115DEEBAA00E2ECD8 /* jobmineApi.xcdatamodeld in Sources */,
+				E8B46AF915E16F4B00442360 /* jobmineApi.m in Sources */,
+				E8B46AFD15E170EA00442360 /* jobmineDictionary.m in Sources */,
+				E8B46B0015E186F400442360 /* URLLoader.m in Sources */,
+				E87289D115E5EF3B0087184B /* ASIAuthenticationDialog.m in Sources */,
+				E87289D215E5EF3B0087184B /* ASIInputStream.m in Sources */,
+				E87289D315E5EF3B0087184B /* ASIFormDataRequest.m in Sources */,
+				E87289D415E5EF3B0087184B /* ASIHTTPRequest.m in Sources */,
+				E87289D515E5EF3B0087184B /* ASINetworkQueue.m in Sources */,
+				E87289D615E5EF3B0087184B /* ASIDownloadCache.m in Sources */,
+				E87289D715E5EF3B0087184B /* ASIDataDecompressor.m in Sources */,
+				E87289D815E5EF3B0087184B /* ASIDataCompressor.m in Sources */,
+				E87289DC15E5F0100087184B /* Reachability.m in Sources */,
+				E87075AD15E8382C00BF1483 /* RequestFactory.m in Sources */,
+				E8C86C9815E925DB00EE54B3 /* RequestResponser.m in Sources */,
+				E870D0A315E96B7900BC5270 /* Oracle.m in Sources */,
+				E870D0AB15E9825F00BC5270 /* NSString+extraction.m in Sources */,
+				E870BDFC15EBD86B0047D35E /* JobmineListingViewController.m in Sources */,
+				E870BE0115EBDD8B0047D35E /* CoreDataTableViewController.m in Sources */,
+				E870955F15EECFC300DE4BED /* TFHppleElement.m in Sources */,
+				E870956015EECFC300DE4BED /* TFHpple.m in Sources */,
+				E870956115EECFC300DE4BED /* XPathQuery.m in Sources */,
+				E87DD87415F157A800ABB02A /* TFHpple+CoreData.m in Sources */,
+				E8717354160EC52400A3935C /* jobmineApplicationShortListCell.m in Sources */,
+				E8717358160ECCDC00A3935C /* jobmineCellConfigetor.m in Sources */,
+				E8707D8C1615241D00DEBC47 /* JobmineInfo.m in Sources */,
+				E8702B92161E7E72009A1522 /* JobmineApplicationDetail.m in Sources */,
+				E870B751161FA430007915C1 /* jobmineAllApplicationCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B376E215DEEBAA00E2ECD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B376F715DEEBAA00E2ECD8 /* jobmineApiTests.m in Sources */,
+				E86FF2A215E476AD004A18DB /* URLLoader.m in Sources */,
+				E8734BEA15EAA18800DA7466 /* NSString+extraction.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8B376EE15DEEBAA00E2ECD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8B376C615DEEBAA00E2ECD8 /* jobmineM */;
+			targetProxy = E8B376ED15DEEBAA00E2ECD8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8B376D615DEEBAA00E2ECD8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8B376D715DEEBAA00E2ECD8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E8B376F215DEEBAA00E2ECD8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8B376F315DEEBAA00E2ECD8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8B376F815DEEBAA00E2ECD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8B376F915DEEBAA00E2ECD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8B376FB15DEEBAA00E2ECD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jobmineApi/jobmineM-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
+				INFOPLIST_FILE = "jobmineApi/jobmineM-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = jobmineM;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E8B376FC15DEEBAA00E2ECD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jobmineApi/jobmineM-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
+				INFOPLIST_FILE = "jobmineApi/jobmineM-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = jobmineM;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E8B376FE15DEEBAA00E2ECD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/jobmineApi.app/jobmineApi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jobmineApi/jobmineApi-Prefix.pch";
+				INFOPLIST_FILE = "jobmineApiTests/jobmineMTests-Info.plist";
+				PRODUCT_NAME = jobmineMTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E8B376FF15DEEBAA00E2ECD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/jobmineApi.app/jobmineApi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jobmineApi/jobmineApi-Prefix.pch";
+				INFOPLIST_FILE = "jobmineApiTests/jobmineMTests-Info.plist";
+				PRODUCT_NAME = jobmineMTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8B376C115DEEBAA00E2ECD8 /* Build configuration list for PBXProject "jobmineM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B376F815DEEBAA00E2ECD8 /* Debug */,
+				E8B376F915DEEBAA00E2ECD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8B376FA15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B376FB15DEEBAA00E2ECD8 /* Debug */,
+				E8B376FC15DEEBAA00E2ECD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8B376FD15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B376FE15DEEBAA00E2ECD8 /* Debug */,
+				E8B376FF15DEEBAA00E2ECD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8B376DF15DEEBAA00E2ECD8 /* jobmineApi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8B376E015DEEBAA00E2ECD8 /* jobmineApi.xcdatamodel */,
+			);
+			currentVersion = E8B376E015DEEBAA00E2ECD8 /* jobmineApi.xcdatamodel */;
+			path = jobmineApi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E8B376BE15DEEBAA00E2ECD8 /* Project object */;
+}
