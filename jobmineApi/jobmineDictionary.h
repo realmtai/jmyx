@@ -11,8 +11,11 @@
 @interface jobmineDictionary : NSObject
 
 extern NSString*const jobmineDomainURL;
+
 extern NSString*const jobmineLoginURL;
+
 extern NSString*const jobmineApplicationDetailURL;
+
 
 extern NSString*const jobmineResumeURL;
 extern NSString*const jobmineSearchURL;
@@ -20,9 +23,6 @@ extern NSString*const jobmineApplicationShortListURL;
 extern NSString*const jobmineApplicationListURL;
 extern NSString*const jobmineInterviewURL;
 extern NSString*const jobmineRankingURL;
-
-
-
 
 
 

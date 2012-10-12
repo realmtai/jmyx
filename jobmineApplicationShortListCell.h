@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *jobEmployeerName;
 @property (weak, nonatomic) IBOutlet UILabel *jobNumberOfOpenningVSNumberOfApplicant;
 @property (weak, nonatomic) IBOutlet UILabel *jobLastDayToApply;
-@property (weak, nonatomic) IBOutlet UILabel *jobApplyStatus;
 
 
 @end

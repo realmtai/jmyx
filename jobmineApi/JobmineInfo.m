@@ -1,8 +1,8 @@
 //
 //  JobmineInfo.m
-//  jobmineM
+//  Jobmine Mobile
 //
-//  Created by edwin on 9/28/12.
+//  Created by edwin on 10/8/12.
 //  Copyright (c) 2012 edwin. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 @implementation JobmineInfo
 
 @dynamic applicationListing;
-@dynamic jID;
 @dynamic isFavourite;
+@dynamic jID;
 @dynamic refreToApplication;
 
 @end

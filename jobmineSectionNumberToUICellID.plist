@@ -4,9 +4,7 @@
 <dict>
 	<key>10</key>
 	<string>applicationShortListCell</string>
-	<key>12</key>
-	<string>allApplicationCell</string>
 	<key>11</key>
-	<string></string>
+	<string>allApplicationCell</string>
 </dict>
 </plist>

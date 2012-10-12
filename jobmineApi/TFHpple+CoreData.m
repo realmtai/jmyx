@@ -19,6 +19,19 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
     
         
     switch (aCategory) {
+			
+		case CategoryListingJobApplicationDetail:
+		{
+			
+            NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"//*[@id=\"UW_CO_JOBDTL_VW_UW_CO_JOB_ID\"]"];
+			[self insertJobmineApplicationDetail:[[NSString alloc] initWithData:aJobmineResponse
+																	   encoding:NSUTF8StringEncoding]
+										forJobID:((TFHppleElement*)[arrayOfEle lastObject]).content.intValue
+									 withContext:aContext];
+			
+			
+		}
+			break;
         case CategoryListingApplicationShortList:
         {
             NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"/html/body/table/tr"];
@@ -45,7 +58,25 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 
 
 
++ (void) insertJobmineApplicationDetail: (NSString* ) HTMLDataString
+							   forJobID: (int) jID
+							withContext: (NSManagedObjectContext* ) aContext{
+	
+	
+	if (jID != 0) {
+		NSFetchRequest* allShortListForDeletation = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([JobmineApplicationDetail class])];
+		allShortListForDeletation.predicate = [NSPredicate predicateWithFormat:@"jID == %i", jID];
+		allShortListForDeletation.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"jID" ascending:YES]];
+		
+		NSError* error = nil;
+		NSArray *qResult = [aContext executeFetchRequest:allShortListForDeletation error:&error];
+		if ([qResult count] == 1) {
+			[(JobmineApplicationDetail*)[qResult lastObject] setJobDescription:HTMLDataString];
+		}
 
+	}
+	
+}
 
 
 
@@ -70,7 +101,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
     NSMutableArray* mutableArraryOfElement = [arrayOfEle mutableCopy];
     [mutableArraryOfElement removeObjectAtIndex:0];
     // fetch all the object that should be deleted 
-    NSFetchRequest* allShortListForDeletation = [NSFetchRequest fetchRequestWithEntityName:[@"" stringByAppendingFormat:@"%@",NSStringFromClass([JobmineInfo class])]];
+    NSFetchRequest* allShortListForDeletation = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([JobmineInfo class])];
     allShortListForDeletation.predicate = [NSPredicate predicateWithFormat:@"(applicationListing = %i) AND NOT(jID IN %@)", aCategory
                                            , arrayOfId];
     allShortListForDeletation.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"jID" ascending:YES]];
@@ -83,8 +114,8 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 	// when the application is both in application short list and it in some category and is being deleted and that will create a duplicated application short list
 	
     [qResult enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			if (aCategory == CategoryListingApplicationShortList ||
-			(aCategory != CategoryListingApplicationShortList && ((JobmineInfo*)obj).isFavourite.intValue == @(NO).intValue)) {
+		if (aCategory == CategoryListingApplicationShortList ||
+			(aCategory != CategoryListingApplicationShortList && ((JobmineInfo*)obj).isFavourite.intValue == NO)) {
 			[aContext deleteObject:obj];
 		}else if (((JobmineInfo*)obj).isFavourite.intValue == @(YES).intValue){
 			((JobmineInfo*)obj).applicationListing = @(CategoryListingApplicationShortList);
@@ -92,7 +123,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
     }];
     
     // fetch again for insert missing ones
-    NSFetchRequest* allShortListAfterDeletation = [NSFetchRequest fetchRequestWithEntityName:[@"" stringByAppendingFormat:@"%@",NSStringFromClass([JobmineInfo class])]];
+    NSFetchRequest* allShortListAfterDeletation = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([JobmineInfo class])];
     allShortListAfterDeletation.predicate = [NSPredicate predicateWithFormat:@"applicationListing = %i", aCategory];
     allShortListAfterDeletation.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"jID" ascending:YES]];
     
@@ -130,14 +161,12 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
         case CategoryListingApplicationShortList:{
             NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
             if (jobmineID.intValue != 0) {
-                //dispatch_async(dispatch_get_main_queue(), ^{
-                    JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:[@"" stringByAppendingFormat:@"%@",NSStringFromClass([JobmineInfo class])]
+                    JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
                                                                        inManagedObjectContext:aContext];
                     aInfo.jID = jobmineID;
                     aInfo.applicationListing = @(aCategory);
                     aInfo.isFavourite = @(YES);
                     aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
-               // });
             }
         }
             break;
@@ -146,16 +175,13 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 		case CategoryListingAllApplicationList:{
 			NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
             if (jobmineID.intValue != 0) {
-              //  dispatch_async(dispatch_get_main_queue(), ^{
-                    JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:[@"" stringByAppendingFormat:@"%@",NSStringFromClass([JobmineInfo class])]
+                    JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
                                                                        inManagedObjectContext:aContext];
                     aInfo.jID = jobmineID;
                     aInfo.applicationListing = @(aCategory);
                     aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
-              //  });
             }
 		}
-			
 			break;
         default:
             break;
@@ -165,14 +191,14 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 
 
 + (JobmineApplicationDetail* ) fetchAndUpdateSingleApplicationDetail: (TFHppleElement*) obj
+													   withJobmineID: (NSNumber*) jobmineID
 														 forCategory: (CategoryListing) aCategory
 												  withManagedContext:(NSManagedObjectContext* ) aContext
 										withApplicationCreationBlock: (applicationCreation) aCreatorBlock{
 	
 	
-    NSNumber* jobmineID = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]);
 	
-	NSFetchRequest* allAppWithId = [[NSFetchRequest alloc] initWithEntityName:[@"" stringByAppendingFormat:@"%@", NSStringFromClass([JobmineApplicationDetail class])]];
+	NSFetchRequest* allAppWithId = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([JobmineApplicationDetail class])];
 	allAppWithId.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"jID" ascending:YES]];
 	allAppWithId.predicate = [NSPredicate predicateWithFormat:@"jID == %i", jobmineID.intValue];
 	NSError* fetchError = nil;
@@ -223,6 +249,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 				return resultApplicationDetail;
 			};
 			return [self fetchAndUpdateSingleApplicationDetail:obj
+												 withJobmineID:jobmineID
 												   forCategory:aCategory
 											withManagedContext:aContext
 								  withApplicationCreationBlock:createApplicationShortListAppFromObject];
@@ -260,6 +287,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 				return resultApplicationDetail;
 			};
 			return [self fetchAndUpdateSingleApplicationDetail:obj
+												 withJobmineID:jobmineID
 												   forCategory:aCategory
 											withManagedContext:aContext
 								  withApplicationCreationBlock:createAllApplicationListAppFromObject];

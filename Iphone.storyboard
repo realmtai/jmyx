@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="TQx-VZ-YN2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="TQx-VZ-YN2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
-        <!--Jobmine Listing View Controller-->
+        <!--Jobmine Listing View Controller -  -->
         <scene sceneID="fcS-7T-9wv">
             <objects>
                 <tableViewController id="QpF-Wh-PbW" customClass="JobmineListingViewController" sceneMemberID="viewController">
@@ -41,9 +41,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last day to apply" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5sO-pf-76z">
-                                            <rect key="frame" x="74" y="57" width="130" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last day to apply" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5sO-pf-76z">
+                                            <rect key="frame" x="100" y="57" width="200" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,15 +55,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Application status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bC4-YS-DFH">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Application status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bC4-YS-DFH">
                                             <rect key="frame" x="158" y="80" width="142" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="apply status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="08b-xJ-5QH">
-                                            <rect key="frame" x="207" y="57" width="93" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -75,12 +68,11 @@
                                 <connections>
                                     <outlet property="jobApplicationName" destination="q9H-rC-TXc" id="ula-DP-SJz"/>
                                     <outlet property="jobApplicationStatus" destination="bC4-YS-DFH" id="Puc-7A-1DL"/>
-                                    <outlet property="jobApplyStatus" destination="08b-xJ-5QH" id="e5E-rZ-cVj"/>
                                     <outlet property="jobEmployeerName" destination="HaB-mP-SRc" id="JGc-e6-GZc"/>
                                     <outlet property="jobJobStatus" destination="CuO-40-yMR" id="BLK-9W-gbE"/>
                                     <outlet property="jobLastDayToApply" destination="5sO-pf-76z" id="Lg1-fT-tUH"/>
                                     <outlet property="jobNumberOfOpenningVSNumberOfApplicant" destination="sYs-As-meK" id="mVs-fe-EGV"/>
-                                    <segue destination="ygY-hD-e3m" kind="push" id="e8k-ic-SVf"/>
+                                    <segue destination="MbY-WU-9dL" kind="push" id="yqR-e2-b8P"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="applicationShortListCell" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="applicationShortListCell" rowHeight="85" id="rB2-j4-jBD" customClass="jobmineApplicationShortListCell">
@@ -111,15 +103,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last day to apply" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zi2-6b-Nkd">
-                                            <rect key="frame" x="74" y="57" width="130" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="apply status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bfx-bR-WBg">
-                                            <rect key="frame" x="207" y="57" width="93" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last day to apply" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zi2-6b-Nkd">
+                                            <rect key="frame" x="100" y="57" width="200" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -130,11 +115,10 @@
                                 </view>
                                 <connections>
                                     <outlet property="jobApplicationName" destination="sPv-W8-hX7" id="Qjg-CX-me1"/>
-                                    <outlet property="jobApplyStatus" destination="bfx-bR-WBg" id="aIU-d1-Qiv"/>
                                     <outlet property="jobEmployeerName" destination="Zec-uo-wvs" id="ihJ-Zu-uJD"/>
                                     <outlet property="jobLastDayToApply" destination="Zi2-6b-Nkd" id="b8f-qZ-6uM"/>
                                     <outlet property="jobNumberOfOpenningVSNumberOfApplicant" destination="P1H-7z-Xps" id="b5Q-pk-f52"/>
-                                    <segue destination="ygY-hD-e3m" kind="push" id="2qZ-Q0-gg1"/>
+                                    <segue destination="MbY-WU-9dL" kind="push" id="L3n-fA-70L"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="footerView" rowHeight="44" id="yKK-73-a7x">
@@ -178,13 +162,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="wQL-0G-Cqn">
-                        <barButtonItem key="rightBarButtonItem" title="appSList" id="f05-ax-tNH">
-                            <connections>
-                                <action selector="updateListing:" destination="QpF-Wh-PbW" id="aLe-oh-9wP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title=" " id="wQL-0G-Cqn"/>
                     <connections>
                         <outlet property="jobmineTableView" destination="CSw-CG-HDn" id="7Ql-d0-c0j"/>
                     </connections>
@@ -193,20 +171,99 @@
             </objects>
             <point key="canvasLocation" x="782" y="44"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="xuo-Sx-8K9">
+        <!--Application Detail View Controller-->
+        <scene sceneID="Vye-uD-4II">
             <objects>
-                <viewController id="ygY-hD-e3m" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tOr-jI-khb">
+                <tableViewController id="MbY-WU-9dL" customClass="ApplicationDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="pDy-3z-cjR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="standardDisplayCell" textLabel="uTj-Fi-A2b" detailTextLabel="TAV-zB-v0t" style="IBUITableViewCellStyleValue2" id="QeK-q7-4rQ">
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uTj-Fi-A2b">
+                                            <rect key="frame" x="10" y="15" width="67" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TAV-zB-v0t">
+                                            <rect key="frame" x="83" y="12" width="41" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="header" textLabel="3fB-KE-61k" style="IBUITableViewCellStyleDefault" id="9oD-4B-Wyp">
+                                <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Job Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3fB-KE-61k">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MbY-WU-9dL" id="AAm-PH-uiE"/>
+                            <outlet property="delegate" destination="MbY-WU-9dL" id="63c-qA-1d8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qsy-TT-UHi">
+                        <barButtonItem key="rightBarButtonItem" title="Job Description" id="gvV-gt-7FH">
+                            <connections>
+                                <segue destination="nLc-7H-9KC" kind="push" id="MRx-fi-OCA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j7R-vt-24h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="44"/>
+        </scene>
+        <!--Job Description View Controller-->
+        <scene sceneID="g0b-pU-oan">
+            <objects>
+                <viewController id="nLc-7H-9KC" customClass="JobDescriptionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wgn-zG-wAX">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="n20-dZ-NjZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0do-kK-wMG"/>
+                    <connections>
+                        <outlet property="jobDescriptionViewer" destination="n20-dZ-NjZ" id="yLb-gv-9uX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Cd-TQ-KmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20X-Bf-zVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="44"/>
+            <point key="canvasLocation" x="1705" y="44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j3W-Md-sQf">
@@ -240,6 +297,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="e8k-ic-SVf"/>
+        <segue reference="yqR-e2-b8P"/>
     </inferredMetricsTieBreakers>
 </document>

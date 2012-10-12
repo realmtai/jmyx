@@ -35,6 +35,11 @@ NSString*const RequestResponserNotificationEndStateReached = @"RequestResponserN
             NSLog(@"=================END END\n%@\n================ENDED", [request responseString]);
         }
         [TFHpple insertDataString:self.respondData forCategory:self.requestResponseForCategoryListing withManagedContext:self.jobmine.jobmineDoc.managedObjectContext];
+		
+		if ([self.jobmineDataResponder conformsToProtocol:@protocol(jobmineNetworkDelegate)]) {
+			[self.jobmineDataResponder jobmineLoadDataReachEndState:self.jobmine withHTMLString:[request responseString]];
+		}
+		
         [[NSNotificationCenter defaultCenter] postNotificationName:RequestResponserNotificationEndStateReached object:self];
     }else if ([self currentRequestState] == JobmineRequestTypeError){
         

@@ -15,6 +15,8 @@
 #import "JobmineApplicationDetail.h"
 #import "jobmineCellConfigetor.h"
 
+#import "ApplicationDetailViewController.h"
+
 @interface JobmineListingViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *jobmineTableView;
 @property (weak, nonatomic) UIButton* reportBugButton;
@@ -50,7 +52,13 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated{
-	[super viewDidAppear:animated];UIWindow* mainWindow = [[UIApplication sharedApplication] keyWindow];
+	[super viewDidAppear:animated];
+	__block UIWindow* mainWindow = nil;
+	[[[UIApplication sharedApplication] windows] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		if (obj == self.view.window) {
+			mainWindow = obj;
+		}
+	}];
 	[self addReportBugButtonForWindow:mainWindow withActionResponseObject:self withSelector:@selector(reportBugButtonPressed:)];
 //	[[[UIApplication sharedApplication] keyWindow] bringSubviewToFront:self.reportBugButton];
 }
@@ -155,8 +163,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
-	JobmineInfo* aInfo = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	
     return [jobmineCellConfigetor configCellForTable:tableView
 										forIndexPath:indexPath
 										   forDetail:[self.fetchedResultsController objectAtIndexPath:indexPath]
@@ -223,15 +229,14 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (buttonIndex) {
-        case 0:
-        {
-            [self.jobmine updateSessionsWithListing:CategoryListingApplicationShortList];
-        }
-            break;
+		case 0:
+			[self.jobmine updateLoginInfo];
+			break;
         case 1:
-        {
+            [self.jobmine updateSessionsWithListing:CategoryListingApplicationShortList];
+            break;
+        case 2:
             [self.jobmine updateSessionsWithListing:CategoryListingAllApplicationList];
-        }
             break;
             
         default:
@@ -245,8 +250,13 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if ([alertView alertViewStyle] == UIAlertViewStyleLoginAndPasswordInput) {
-        [self.jobmine loginToJobmineWithUserName:[alertView textFieldAtIndex:0].text andPassWord:[alertView textFieldAtIndex:1].text];
-    }
+        [self.jobmine loginToJobmineWithUserName:[alertView textFieldAtIndex:0].text
+									 andPassWord:[alertView textFieldAtIndex:1].text];
+    }else if ([alertView alertViewStyle] == UIAlertViewStyleDefault){
+		if (buttonIndex == 1) {
+			[self.jobmine removeUserInfo];
+		}
+	}
 }
 
 
@@ -293,7 +303,7 @@
 - (void) setupNSFetchRequestController{
     
     NSFetchRequest* fetchAllListing = [NSFetchRequest fetchRequestWithEntityName:@"JobmineInfo"];
-    fetchAllListing.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"applicationListing" ascending:YES]];
+    fetchAllListing.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"applicationListing" ascending:NO]];
     
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchAllListing managedObjectContext:[self jobmine].jobmineDoc.managedObjectContext sectionNameKeyPath:@"applicationListing" cacheName:nil];
@@ -333,8 +343,11 @@
 										 30,
 										 buttonWidth, buttonHeight);
 		[aReportButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin];
-		[aReportButton setBackgroundImage:[UIImage imageNamed:@"bug.jpg"] forState:UIControlStateNormal];
+		[aReportButton setBackgroundImage:[UIImage imageNamed:@"bug.jpg"]
+								 forState:UIControlStateNormal];
+		
 		[aReportButton.layer setCornerRadius:5.0f];
+		[aReportButton setAlpha:0.8];
 		[aReportButton setClipsToBounds:YES];
 		[aReportButton addTarget:anObject action:aSelector forControlEvents:UIControlEventTouchUpInside];
 		
@@ -391,10 +404,12 @@
 }
 
 - (MFMailComposeViewController* ) reportABugController{
+	
 	MFMailComposeViewController* atempController = nil;
 	
 	if (!_reportABugController) {
 		UIImage* screenShoot = [self screenshot];
+		
 		atempController = [[MFMailComposeViewController alloc] init];
 		atempController.mailComposeDelegate = self;
 		[atempController setSubject:[NSString stringWithFormat:@"Bug - "]];
@@ -410,27 +425,37 @@
 
 #pragma mark - UI Action Responses
 
-
-- (IBAction) updateListing:(id)sender{
-    [self.jobmine insertDummyEntry];
-}
+//
+//- (IBAction) updateListing:(id)sender{
+//    [self.jobmine insertDummyEntry];
+//}
 
 - (IBAction)refreshButtomPressed:(UIBarButtonItem *)sender {
-    UIActionSheet* refeshSheet = [[UIActionSheet alloc] initWithTitle:@"Category To Refe" delegate:self cancelButtonTitle:@"Done" destructiveButtonTitle:nil otherButtonTitles:@"Applocation Short List", @"All Applocation", nil];
+    UIActionSheet* refeshSheet = [[UIActionSheet alloc] initWithTitle:@"Category To Refresh" delegate:self cancelButtonTitle:@"Done" destructiveButtonTitle:nil otherButtonTitles:@"re-login",
+								  @"Applocation Short List",
+								  @"All Applocation",
+								  nil];
     [refeshSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     [refeshSheet showInView:self.view];
 }
 
 - (IBAction)logoutButtom:(UIBarButtonItem *)sender {
-    [self.jobmine removeUserInfo];
+	
+	UIAlertView* logoutAlertView = [[UIAlertView alloc] initWithTitle:@"Logout out of current device?"
+								message:@""
+							   delegate:nil
+					  cancelButtonTitle:@"No"
+					  otherButtonTitles:@"Yes", nil];
+	logoutAlertView.delegate = self;
+	[logoutAlertView show];
 }
 
 - (void) reportBugButtonPressed: (id) aSender{
 	if ([MFMailComposeViewController canSendMail]) {
 		self.reportBugButton.hidden = YES;
 		MFMailComposeViewController* mailABug = [self reportABugController];
-		[self presentModalViewController:mailABug animated:YES];
-		
+		[self.navigationController presentModalViewController:mailABug animated:YES];
+//		[self presentModalViewController:mailABug animated:YES];
 	}else{
 		[[[UIAlertView alloc] initWithTitle:@"Your Device Can't Send Mail"
 									message:@""
@@ -451,6 +476,18 @@
 }
 
 
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	[super prepareForSegue:segue sender:sender];
+	if ([sender isKindOfClass:[UITableViewCell class]] &&
+		[[segue destinationViewController] respondsToSelector:@selector(setJobInfo:)]) {
+		
+	 	JobmineInfo* aJobInfo = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForCell:sender]];
+		[[segue destinationViewController] setJobInfo:aJobInfo];
+		[[segue destinationViewController] setJobmine:self.jobmine];
+		
+	}
+}
 
 
 

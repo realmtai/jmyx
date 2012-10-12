@@ -1,8 +1,8 @@
 //
 //  JobmineInfo.h
-//  jobmineM
+//  Jobmine Mobile
 //
-//  Created by edwin on 9/28/12.
+//  Created by edwin on 10/8/12.
 //  Copyright (c) 2012 edwin. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @interface JobmineInfo : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * applicationListing;
-@property (nonatomic, retain) NSNumber * jID;
 @property (nonatomic, retain) NSNumber * isFavourite;
+@property (nonatomic, retain) NSNumber * jID;
 @property (nonatomic, retain) JobmineApplicationDetail *refreToApplication;
 
 @end

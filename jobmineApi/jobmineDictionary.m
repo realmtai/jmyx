@@ -12,8 +12,11 @@
 
 
 NSString*const jobmineDomainURL = @"https://jobmine.ccol.uwaterloo.ca";
+
 NSString*const jobmineLoginURL = @"https://jobmine.ccol.uwaterloo.ca/psp/SS/?cmd=login&languageCd=ENG&sessionId=";
-NSString*const jobmineApplicationDetailURL = @"https://jobmine.ccol.uwaterloo.ca/psc/SS/EMPLOYEE/WORK/c/UW_CO_STUDENTS.UW_CO_JOBDTLS.GBL";
+
+NSString*const jobmineApplicationDetailURL = @"https://jobmine.ccol.uwaterloo.ca/psc/SS/EMPLOYEE/WORK/c/UW_CO_STUDENTS.UW_CO_JOBDTLS.GBL?Page=UW_CO_STU_JOBDTLS&UW_CO_JOB_ID=";
+
 
 NSString*const jobmineResumeURL = @"https://jobmine.ccol.uwaterloo.ca/psc/SS/EMPLOYEE/WORK/c/UW_CO_STUDENTS.UW_CO_STUDDOCS.GBL";
 NSString*const jobmineSearchURL = @"https://jobmine.ccol.uwaterloo.ca/psc/SS/EMPLOYEE/WORK/c/UW_CO_STUDENTS.UW_CO_JOBSRCH.GBL";

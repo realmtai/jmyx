@@ -34,16 +34,6 @@ NSString*const JobmineNotificationLoginInfoIncorrect = @"JobmineNotificationLogi
 NSString*const JobmineUserDefaultUserName = @"JobmineUserDefaultUserName";
 NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
 
-@synthesize userName = _userName;
-@synthesize passWord = _passWord;
-@synthesize jobmineURLLookUpDictionary = _jobmineURLLookUpDictionary;
-@synthesize ICSID = _ICSID;
-@synthesize requestStack = _requestStack;
-@synthesize ableToAcceptRequest = _ableToAcceptRequest;
-@synthesize isCookieRenewvalNeeded = _isCookieRenewvalNeeded;
-@synthesize isICSIDRenewvalNeeded = _isICSIDRenewvalNeeded;
-@synthesize jobmineDoc = _jobmineDoc;
-
 
 #pragma mark - inits
 - (id) init{
@@ -234,7 +224,7 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
 //    });
 //}
 
-- (void) initJobmineMineRequest: (RequestType) aTypeOfRequest withURL: (NSString*) aRequestURL{
+- (void) initJobmineMineRequest: (CategoryListing) aTypeOfRequest withURL: (NSString*) aRequestURL{
 	
     RequestResponser* aResponder = [[RequestResponser alloc] init];
     aResponder.isDebug = YES;
@@ -261,7 +251,7 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
                 break;
                 
             case CategoryListingActiveApplicationList:
-				//TODO: ADD CategoryListingActiveApplicationList 
+				//TODO: ADD CategoryListingActiveApplicationList
                 break;
 			case CategoryListingAllApplicationList:{
 				[self initJobmineMineRequest:aListing withURL:jobmineApplicationListURL];
@@ -272,6 +262,38 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
                 break;
         }
     }
+}
+
+
+
+- (void) updateApplicationDetailWithAppInfo: (JobmineInfo* ) aJobmineInfo
+							  withResponser: (__weak id<jobmineNetworkDelegate>) ajobmineNetworkDelegate{
+	
+	NSString* resultHTML = aJobmineInfo.refreToApplication.jobDescription;
+	if (!resultHTML) {
+		NSString* jIDString = [NSString stringWithFormat:@"00%@", aJobmineInfo.refreToApplication.jID.stringValue];
+		
+		
+		
+		
+		RequestResponser* aResponder = [[RequestResponser alloc] init];
+		aResponder.isDebug = YES;
+		[aResponder setCurrentRequestState:JobmineRequestTypeEnd];
+		[aResponder setJobmine:self];
+		[aResponder setJobmineDataResponder:ajobmineNetworkDelegate];
+		[aResponder setRequestResponseForCategoryListing:CategoryListingJobApplicationDetail];
+		[self.requestStack addObject:aResponder];
+		dispatch_queue_t applicationShortListQuee = dispatch_queue_create("aRequest", NULL);
+		dispatch_async(applicationShortListQuee, ^{
+			ASIFormDataRequest* aDummyGetRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:[jobmineApplicationDetailURL stringByAppendingString:jIDString]];
+			[aDummyGetRequest setDelegate:[self.requestStack lastObject]];
+			[aDummyGetRequest startAsynchronous];
+		});
+		
+		
+	}else{
+		[ajobmineNetworkDelegate jobmineLoadDataReachEndState:self withHTMLString:resultHTML];
+	}
 }
 
 - (void) loginToJobmineWithUserName: (NSString* )uName andPassWord: (NSString* ) pWord{
@@ -314,15 +336,16 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-#pragma mark - remove later
 
-- (void) insertDummyEntry{
-    JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:@"JobmineInfo" inManagedObjectContext:self.jobmineDoc.managedObjectContext];
-    aInfo.jID = [NSNumber numberWithInt:8];
-    aInfo.applicationListing = [NSNumber numberWithInt:10];
-    aInfo.refreToApplication = [NSEntityDescription insertNewObjectForEntityForName:@"JobmineApplicationDetail" inManagedObjectContext:self.jobmineDoc.managedObjectContext];
-    aInfo.refreToApplication.jID = aInfo.jID;
-}
+
+
+//- (void) insertDummyEntry{
+//    JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:@"JobmineInfo" inManagedObjectContext:self.jobmineDoc.managedObjectContext];
+//    aInfo.jID = [NSNumber numberWithInt:8];
+//    aInfo.applicationListing = [NSNumber numberWithInt:10];
+//    aInfo.refreToApplication = [NSEntityDescription insertNewObjectForEntityForName:@"JobmineApplicationDetail" inManagedObjectContext:self.jobmineDoc.managedObjectContext];
+//    aInfo.refreToApplication.jID = aInfo.jID;
+//}
 
 
 @end

@@ -10,9 +10,7 @@
 		E86FF2A215E476AD004A18DB /* URLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AFF15E186F400442360 /* URLLoader.m */; };
 		E8700F9515EB47A5000E60DB /* Iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8700F9415EB47A5000E60DB /* Iphone.storyboard */; };
 		E8702B8E161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */; };
-		E8702B92161E7E72009A1522 /* JobmineApplicationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E8702B91161E7E72009A1522 /* JobmineApplicationDetail.m */; };
 		E87075AD15E8382C00BF1483 /* RequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E87075AC15E8382C00BF1483 /* RequestFactory.m */; };
-		E8707D8C1615241D00DEBC47 /* JobmineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8707D8B1615241D00DEBC47 /* JobmineInfo.m */; };
 		E8707EB4161FA96000D76738 /* jobmineSectionNumberToUICellID.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */; };
 		E870955F15EECFC300DE4BED /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E870955A15EECFC200DE4BED /* TFHppleElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E870956015EECFC300DE4BED /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = E870955C15EECFC200DE4BED /* TFHpple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -41,7 +39,12 @@
 		E87289E215E5F1100087184B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289E115E5F1100087184B /* MobileCoreServices.framework */; };
 		E87289E415E5F12E0087184B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289E315E5F12E0087184B /* libz.dylib */; };
 		E8734BEA15EAA18800DA7466 /* NSString+extraction.m in Sources */ = {isa = PBXBuildFile; fileRef = E870D0AA15E9825F00BC5270 /* NSString+extraction.m */; };
+		E8735D0916237951005260DB /* JobDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8735D0816237951005260DB /* JobDescriptionViewController.m */; };
 		E87DD87415F157A800ABB02A /* TFHpple+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */; };
+		E87F01141623368700F648D3 /* Jobmine Mobile-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87F01131623368700F648D3 /* Jobmine Mobile-Info.plist */; };
+		E87F011A162343CA00F648D3 /* ApplicationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F0119162343CA00F648D3 /* ApplicationDetailViewController.m */; };
+		E87F011D16236CA700F648D3 /* JobmineApplicationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F011C16236CA600F648D3 /* JobmineApplicationDetail.m */; };
+		E87F012016236CA700F648D3 /* JobmineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F011F16236CA700F648D3 /* JobmineInfo.m */; };
 		E8B376CC15DEEBAA00E2ECD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */; };
 		E8B376CE15DEEBAA00E2ECD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */; };
 		E8B376D015DEEBAA00E2ECD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CF15DEEBAA00E2ECD8 /* CoreGraphics.framework */; };
@@ -75,12 +78,8 @@
 /* Begin PBXFileReference section */
 		E8700F9415EB47A5000E60DB /* Iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone.storyboard; sourceTree = "<group>"; };
 		E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sectionHeaderTranslationDictionary.plist; sourceTree = "<group>"; };
-		E8702B90161E7E72009A1522 /* JobmineApplicationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineApplicationDetail.h; sourceTree = "<group>"; };
-		E8702B91161E7E72009A1522 /* JobmineApplicationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineApplicationDetail.m; sourceTree = "<group>"; };
 		E87075AB15E8382C00BF1483 /* RequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestFactory.h; sourceTree = "<group>"; };
 		E87075AC15E8382C00BF1483 /* RequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestFactory.m; sourceTree = "<group>"; };
-		E8707D8A1615241D00DEBC47 /* JobmineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineInfo.h; sourceTree = "<group>"; };
-		E8707D8B1615241D00DEBC47 /* JobmineInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineInfo.m; sourceTree = "<group>"; };
 		E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jobmineSectionNumberToUICellID.plist; sourceTree = "<group>"; };
 		E870955915EECFC200DE4BED /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
 		E870955A15EECFC200DE4BED /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
@@ -131,23 +130,31 @@
 		E87289DF15E5F10A0087184B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E87289E115E5F1100087184B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E87289E315E5F12E0087184B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E8735D0716237951005260DB /* JobDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDescriptionViewController.h; sourceTree = "<group>"; };
+		E8735D0816237951005260DB /* JobDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDescriptionViewController.m; sourceTree = "<group>"; };
 		E87DD87215F157A800ABB02A /* TFHpple+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TFHpple+CoreData.h"; sourceTree = "<group>"; };
 		E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TFHpple+CoreData.m"; sourceTree = "<group>"; };
-		E8B376C715DEEBAA00E2ECD8 /* jobmineM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jobmineM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87F01131623368700F648D3 /* Jobmine Mobile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jobmine Mobile-Info.plist"; sourceTree = "<group>"; };
+		E87F0118162343CA00F648D3 /* ApplicationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailViewController.h; sourceTree = "<group>"; };
+		E87F0119162343CA00F648D3 /* ApplicationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailViewController.m; sourceTree = "<group>"; };
+		E87F011B16236CA600F648D3 /* JobmineApplicationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineApplicationDetail.h; sourceTree = "<group>"; };
+		E87F011C16236CA600F648D3 /* JobmineApplicationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineApplicationDetail.m; sourceTree = "<group>"; };
+		E87F011E16236CA700F648D3 /* JobmineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineInfo.h; sourceTree = "<group>"; };
+		E87F011F16236CA700F648D3 /* JobmineInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineInfo.m; sourceTree = "<group>"; };
+		E8B376C715DEEBAA00E2ECD8 /* Jobmine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jobmine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E8B376CF15DEEBAA00E2ECD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E8B376D115DEEBAA00E2ECD8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E8B376D515DEEBAA00E2ECD8 /* jobmineM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jobmineM-Info.plist"; sourceTree = "<group>"; };
 		E8B376D715DEEBAA00E2ECD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E8B376D915DEEBAA00E2ECD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E8B376DB15DEEBAA00E2ECD8 /* jobmineM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jobmineM-Prefix.pch"; sourceTree = "<group>"; };
+		E8B376DB15DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_rename-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jobmine Mobile.temp_caseinsensitive_rename-Prefix.pch"; sourceTree = "<group>"; };
 		E8B376DC15DEEBAA00E2ECD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8B376DD15DEEBAA00E2ECD8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E8B376E015DEEBAA00E2ECD8 /* jobmineApi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = jobmineApi.xcdatamodel; sourceTree = "<group>"; };
-		E8B376E715DEEBAA00E2ECD8 /* jobmineMTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jobmineMTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B376E715DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_renameTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jobmine Mobile.temp_caseinsensitive_renameTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B376E815DEEBAA00E2ECD8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		E8B376F115DEEBAA00E2ECD8 /* jobmineMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jobmineMTests-Info.plist"; sourceTree = "<group>"; };
+		E8B376F115DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_renameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jobmine Mobile.temp_caseinsensitive_renameTests-Info.plist"; sourceTree = "<group>"; };
 		E8B376F315DEEBAA00E2ECD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E8B376F515DEEBAA00E2ECD8 /* jobmineApiTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jobmineApiTests.h; sourceTree = "<group>"; };
 		E8B376F615DEEBAA00E2ECD8 /* jobmineApiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jobmineApiTests.m; sourceTree = "<group>"; };
@@ -216,10 +223,10 @@
 		E870958015EEE75800DE4BED /* generatedFile */ = {
 			isa = PBXGroup;
 			children = (
-				E8702B90161E7E72009A1522 /* JobmineApplicationDetail.h */,
-				E8702B91161E7E72009A1522 /* JobmineApplicationDetail.m */,
-				E8707D8A1615241D00DEBC47 /* JobmineInfo.h */,
-				E8707D8B1615241D00DEBC47 /* JobmineInfo.m */,
+				E87F011E16236CA700F648D3 /* JobmineInfo.h */,
+				E87F011F16236CA700F648D3 /* JobmineInfo.m */,
+				E87F011B16236CA600F648D3 /* JobmineApplicationDetail.h */,
+				E87F011C16236CA600F648D3 /* JobmineApplicationDetail.m */,
 			);
 			name = generatedFile;
 			sourceTree = "<group>";
@@ -227,13 +234,9 @@
 		E870BDFE15EBD8710047D35E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E870BE0215EBDD900047D35E /* coredata */,
-				E870BDFA15EBD86B0047D35E /* JobmineListingViewController.h */,
-				E870BDFB15EBD86B0047D35E /* JobmineListingViewController.m */,
-				E870F97C1620C25B007B891E /* bug.jpg */,
-				E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */,
-				E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */,
-				E8717355160ECA1100A3935C /* uiCellsAndConfingerator */,
+				E8735D0516237936005260DB /* screen3 */,
+				E87F01171623439E00F648D3 /* screen2 */,
+				E87F01161623439300F648D3 /* screen1 */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -263,7 +266,6 @@
 		E87289A315E5EEB70087184B /* junk */ = {
 			isa = PBXGroup;
 			children = (
-				E8B376D415DEEBAA00E2ECD8 /* Supporting Files */,
 				E8B46AFE15E186F400442360 /* URLLoader.h */,
 				E8B46AFF15E186F400442360 /* URLLoader.m */,
 			);
@@ -300,6 +302,15 @@
 			name = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
+		E8735D0516237936005260DB /* screen3 */ = {
+			isa = PBXGroup;
+			children = (
+				E8735D0716237951005260DB /* JobDescriptionViewController.h */,
+				E8735D0816237951005260DB /* JobDescriptionViewController.m */,
+			);
+			name = screen3;
+			sourceTree = "<group>";
+		};
 		E87746D415F453C300E9F5A7 /* HTML Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +322,29 @@
 				E870955E15EECFC300DE4BED /* XPathQuery.m */,
 			);
 			name = "HTML Parser";
+			sourceTree = "<group>";
+		};
+		E87F01161623439300F648D3 /* screen1 */ = {
+			isa = PBXGroup;
+			children = (
+				E870BE0215EBDD900047D35E /* coredata */,
+				E870BDFA15EBD86B0047D35E /* JobmineListingViewController.h */,
+				E870BDFB15EBD86B0047D35E /* JobmineListingViewController.m */,
+				E870F97C1620C25B007B891E /* bug.jpg */,
+				E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */,
+				E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */,
+				E8717355160ECA1100A3935C /* uiCellsAndConfingerator */,
+			);
+			name = screen1;
+			sourceTree = "<group>";
+		};
+		E87F01171623439E00F648D3 /* screen2 */ = {
+			isa = PBXGroup;
+			children = (
+				E87F0118162343CA00F648D3 /* ApplicationDetailViewController.h */,
+				E87F0119162343CA00F648D3 /* ApplicationDetailViewController.m */,
+			);
+			name = screen2;
 			sourceTree = "<group>";
 		};
 		E87FE51015E8ADF4009F0E80 /* Network */ = {
@@ -335,6 +369,7 @@
 				E8B376EF15DEEBAA00E2ECD8 /* jobmineApiTests */,
 				E8B376CA15DEEBAA00E2ECD8 /* Frameworks */,
 				E8B376C815DEEBAA00E2ECD8 /* Products */,
+				E8B376D415DEEBAA00E2ECD8 /* Supporting Files */,
 				E87289A315E5EEB70087184B /* junk */,
 			);
 			sourceTree = "<group>";
@@ -342,8 +377,8 @@
 		E8B376C815DEEBAA00E2ECD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E8B376C715DEEBAA00E2ECD8 /* jobmineM.app */,
-				E8B376E715DEEBAA00E2ECD8 /* jobmineMTests.octest */,
+				E8B376C715DEEBAA00E2ECD8 /* Jobmine.app */,
+				E8B376E715DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_renameTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -387,12 +422,13 @@
 		E8B376D415DEEBAA00E2ECD8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E8B376D515DEEBAA00E2ECD8 /* jobmineM-Info.plist */,
+				E87F01131623368700F648D3 /* Jobmine Mobile-Info.plist */,
 				E8B376D615DEEBAA00E2ECD8 /* InfoPlist.strings */,
 				E8B376D915DEEBAA00E2ECD8 /* main.m */,
-				E8B376DB15DEEBAA00E2ECD8 /* jobmineM-Prefix.pch */,
+				E8B376DB15DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_rename-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = jobmineApi;
 			sourceTree = "<group>";
 		};
 		E8B376EF15DEEBAA00E2ECD8 /* jobmineApiTests */ = {
@@ -408,7 +444,7 @@
 		E8B376F015DEEBAA00E2ECD8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E8B376F115DEEBAA00E2ECD8 /* jobmineMTests-Info.plist */,
+				E8B376F115DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_renameTests-Info.plist */,
 				E8B376F215DEEBAA00E2ECD8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -417,9 +453,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E8B376C615DEEBAA00E2ECD8 /* jobmineM */ = {
+		E8B376C615DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_rename */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8B376FA15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineM" */;
+			buildConfigurationList = E8B376FA15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "Jobmine Mobile.temp_caseinsensitive_rename" */;
 			buildPhases = (
 				E8B376C315DEEBAA00E2ECD8 /* Sources */,
 				E8B376C415DEEBAA00E2ECD8 /* Frameworks */,
@@ -429,14 +465,14 @@
 			);
 			dependencies = (
 			);
-			name = jobmineM;
+			name = "Jobmine Mobile.temp_caseinsensitive_rename";
 			productName = jobmineApi;
-			productReference = E8B376C715DEEBAA00E2ECD8 /* jobmineM.app */;
+			productReference = E8B376C715DEEBAA00E2ECD8 /* Jobmine.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E8B376E615DEEBAA00E2ECD8 /* jobmineMTests */ = {
+		E8B376E615DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_renameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8B376FD15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineMTests" */;
+			buildConfigurationList = E8B376FD15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "Jobmine Mobile.temp_caseinsensitive_renameTests" */;
 			buildPhases = (
 				E8B376E215DEEBAA00E2ECD8 /* Sources */,
 				E8B376E315DEEBAA00E2ECD8 /* Frameworks */,
@@ -448,9 +484,9 @@
 			dependencies = (
 				E8B376EE15DEEBAA00E2ECD8 /* PBXTargetDependency */,
 			);
-			name = jobmineMTests;
+			name = "Jobmine Mobile.temp_caseinsensitive_renameTests";
 			productName = jobmineApiTests;
-			productReference = E8B376E715DEEBAA00E2ECD8 /* jobmineMTests.octest */;
+			productReference = E8B376E715DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_renameTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -462,7 +498,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = edwin;
 			};
-			buildConfigurationList = E8B376C115DEEBAA00E2ECD8 /* Build configuration list for PBXProject "jobmineM" */;
+			buildConfigurationList = E8B376C115DEEBAA00E2ECD8 /* Build configuration list for PBXProject "Jobmine Mobile" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -474,8 +510,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E8B376C615DEEBAA00E2ECD8 /* jobmineM */,
-				E8B376E615DEEBAA00E2ECD8 /* jobmineMTests */,
+				E8B376C615DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_rename */,
+				E8B376E615DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_renameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -490,6 +526,7 @@
 				E8702B8E161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist in Resources */,
 				E8707EB4161FA96000D76738 /* jobmineSectionNumberToUICellID.plist in Resources */,
 				E870F97D1620C25B007B891E /* bug.jpg in Resources */,
+				E87F01141623368700F648D3 /* Jobmine Mobile-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,9 +588,11 @@
 				E87DD87415F157A800ABB02A /* TFHpple+CoreData.m in Sources */,
 				E8717354160EC52400A3935C /* jobmineApplicationShortListCell.m in Sources */,
 				E8717358160ECCDC00A3935C /* jobmineCellConfigetor.m in Sources */,
-				E8707D8C1615241D00DEBC47 /* JobmineInfo.m in Sources */,
-				E8702B92161E7E72009A1522 /* JobmineApplicationDetail.m in Sources */,
 				E870B751161FA430007915C1 /* jobmineAllApplicationCell.m in Sources */,
+				E87F011A162343CA00F648D3 /* ApplicationDetailViewController.m in Sources */,
+				E87F011D16236CA700F648D3 /* JobmineApplicationDetail.m in Sources */,
+				E87F012016236CA700F648D3 /* JobmineInfo.m in Sources */,
+				E8735D0916237951005260DB /* JobDescriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +611,7 @@
 /* Begin PBXTargetDependency section */
 		E8B376EE15DEEBAA00E2ECD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E8B376C615DEEBAA00E2ECD8 /* jobmineM */;
+			target = E8B376C615DEEBAA00E2ECD8 /* Jobmine Mobile.temp_caseinsensitive_rename */;
 			targetProxy = E8B376ED15DEEBAA00E2ECD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -652,11 +691,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "jobmineApi/jobmineM-Prefix.pch";
+				GCC_PREFIX_HEADER = "jobmineApi/Jobmine Mobile.temp_caseinsensitive_rename-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
-				INFOPLIST_FILE = "jobmineApi/jobmineM-Info.plist";
+				INFOPLIST_FILE = "jobmineApi/jobmine Mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = jobmineM;
+				PRODUCT_NAME = Jobmine;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -665,11 +704,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "jobmineApi/jobmineM-Prefix.pch";
+				GCC_PREFIX_HEADER = "jobmineApi/Jobmine Mobile.temp_caseinsensitive_rename-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
-				INFOPLIST_FILE = "jobmineApi/jobmineM-Info.plist";
+				INFOPLIST_FILE = "jobmineApi/jobmine Mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = jobmineM;
+				PRODUCT_NAME = Jobmine;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -684,8 +723,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jobmineApi/jobmineApi-Prefix.pch";
-				INFOPLIST_FILE = "jobmineApiTests/jobmineMTests-Info.plist";
-				PRODUCT_NAME = jobmineMTests;
+				INFOPLIST_FILE = "jobmineApiTests/Jobmine Mobile.temp_caseinsensitive_renameTests-Info.plist";
+				PRODUCT_NAME = "Jobmine Mobile.temp_caseinsensitive_renameTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -701,8 +740,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jobmineApi/jobmineApi-Prefix.pch";
-				INFOPLIST_FILE = "jobmineApiTests/jobmineMTests-Info.plist";
-				PRODUCT_NAME = jobmineMTests;
+				INFOPLIST_FILE = "jobmineApiTests/Jobmine Mobile.temp_caseinsensitive_renameTests-Info.plist";
+				PRODUCT_NAME = "Jobmine Mobile.temp_caseinsensitive_renameTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -711,7 +750,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E8B376C115DEEBAA00E2ECD8 /* Build configuration list for PBXProject "jobmineM" */ = {
+		E8B376C115DEEBAA00E2ECD8 /* Build configuration list for PBXProject "Jobmine Mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8B376F815DEEBAA00E2ECD8 /* Debug */,
@@ -720,7 +759,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8B376FA15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineM" */ = {
+		E8B376FA15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "Jobmine Mobile.temp_caseinsensitive_rename" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8B376FB15DEEBAA00E2ECD8 /* Debug */,
@@ -729,7 +768,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8B376FD15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "jobmineMTests" */ = {
+		E8B376FD15DEEBAA00E2ECD8 /* Build configuration list for PBXNativeTarget "Jobmine Mobile.temp_caseinsensitive_renameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8B376FE15DEEBAA00E2ECD8 /* Debug */,

@@ -19,7 +19,8 @@
 @property (nonatomic, weak) jobmineApi* jobmine;
 @property (nonatomic) CategoryListing requestResponseForCategoryListing;
 
-
+// set the jobmineData Responder if want to be called with result html string
+@property (nonatomic, weak) id<jobmineNetworkDelegate> jobmineDataResponder;
 
 extern NSString*const RequestResponserNotificationEndStateReached;
 

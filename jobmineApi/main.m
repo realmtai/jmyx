@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 edwin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>x
+#import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
 

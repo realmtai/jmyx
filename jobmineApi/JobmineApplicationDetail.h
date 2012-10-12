@@ -1,8 +1,8 @@
 //
 //  JobmineApplicationDetail.h
-//  jobmineM
+//  Jobmine Mobile
 //
-//  Created by edwin on 10/4/12.
+//  Created by edwin on 10/8/12.
 //  Copyright (c) 2012 edwin. All rights reserved.
 //
 
@@ -32,6 +32,7 @@
 @property (nonatomic, retain) NSNumber * numberOfApplications;
 @property (nonatomic, retain) NSNumber * numberOfOpennings;
 @property (nonatomic, retain) NSString * workingTerm;
+@property (nonatomic, retain) NSString * jobDescription;
 @property (nonatomic, retain) NSSet *inTheseCategory;
 @end
 

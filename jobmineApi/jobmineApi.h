@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "jobmineDictionary.h"
 #import "RequestFactory.h"
+#import "JobmineInfo.h"
+
+@class jobmineApi;
+
+@protocol jobmineNetworkDelegate <NSObject>
+@optional
+- (void) jobmineLoadDataReachEndState: (jobmineApi*) jobmine withHTMLString: (NSString* ) aHTMLString;
+
+@end
 
 
 
@@ -16,8 +25,9 @@
 
 typedef enum{
     CategoryListingApplicationShortList = 10,
+    CategoryListingAllApplicationList,
     CategoryListingActiveApplicationList,
-    CategoryListingAllApplicationList
+	CategoryListingJobApplicationDetail = 100
 }CategoryListing;
 
 
@@ -36,7 +46,6 @@ typedef enum{
 @property (nonatomic, strong) NSMutableArray* requestStack;
 // CoreData datebase document
 @property (nonatomic, strong) UIManagedDocument* jobmineDoc;
-
 
 
 
@@ -64,13 +73,14 @@ extern NSString*const JobmineUserDefaultPassWord;
 
 
 // ask jobmine object to update a Category
-- (void) updateSessionsWithListing: (CategoryListing) aListing;
 - (void) loginToJobmineWithUserName: (NSString* )uName andPassWord: (NSString* ) pWord;
 - (void) updateLoginInfo;
+
+- (void) updateSessionsWithListing: (CategoryListing) aListing;
+- (void) updateApplicationDetailWithAppInfo: (JobmineInfo* ) aJobmineInfo withResponser: (__weak id<jobmineNetworkDelegate>) aResponder;
+
 - (void) removeUserInfo;
 
-
-- (void) insertDummyEntry;
 
 
 

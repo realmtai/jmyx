@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="JobmineApplicationDetail" representedClassName="JobmineApplicationDetail" syncable="YES">
         <attribute name="applicationStatus" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="employer" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,6 +14,7 @@
         <attribute name="interviewType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isFavourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="jID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="jobDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="jobStatus" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="jobTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastDayToApply" optional="YES" attributeType="Date" syncable="YES"/>
@@ -29,7 +30,7 @@
         <relationship name="refreToApplication" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="JobmineApplicationDetail" inverseName="inTheseCategory" inverseEntity="JobmineApplicationDetail" syncable="YES"/>
     </entity>
     <elements>
-        <element name="JobmineApplicationDetail" positionX="-245" positionY="33" width="128" height="345"/>
+        <element name="JobmineApplicationDetail" positionX="-245" positionY="33" width="128" height="360"/>
         <element name="JobmineInfo" positionX="0" positionY="0" width="128" height="105"/>
     </elements>
 </model>
