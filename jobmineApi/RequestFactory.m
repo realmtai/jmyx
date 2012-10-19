@@ -55,9 +55,26 @@
             
             break;
         case JobmineRequestTypeInterview1:
+			
+            aJobmineRequest = [RequestFactory newRequest:RequestTypeJobminePOSTRequest withURL:jobmineInterviewURL];
+            [aJobmineRequest addPostValue:jobminePostICActionInterview forKey:@"ICAction"];
+			break;
         case JobmineRequestTypeCanceledInterview1:
+			
+            aJobmineRequest = [RequestFactory newRequest:RequestTypeJobminePOSTRequest withURL:jobmineInterviewURL];
+            [aJobmineRequest addPostValue:jobminePostICActionCanceledInterview forKey:@"ICAction"];
+			break;
+			
         case JobmineRequestTypeGroupedInterview1:
+			
+            aJobmineRequest = [RequestFactory newRequest:RequestTypeJobminePOSTRequest withURL:jobmineInterviewURL];
+            [aJobmineRequest addPostValue:jobminePostICActionGroupedInterview forKey:@"ICAction"];
+			break;
         case JobmineRequestTypeSpcialRequestInterview1:
+			
+            aJobmineRequest = [RequestFactory newRequest:RequestTypeJobminePOSTRequest withURL:jobmineInterviewURL];
+            [aJobmineRequest addPostValue:jobminePostICActionSpcialRequestInterview forKey:@"ICAction"];
+			break;
             
             break;
         case JobmineRequestTypeInterview2:

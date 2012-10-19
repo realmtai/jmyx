@@ -4,7 +4,15 @@
 <dict>
 	<key>10</key>
 	<string>applicationShortListCell</string>
+	<key>14</key>
+	<string>jobmineSingleInterviewCell</string>
 	<key>11</key>
 	<string>allApplicationCell</string>
+	<key>15</key>
+	<string>jobmineGroupedInterviewCell</string>
+	<key>16</key>
+	<string>jobmineSpcialRequestInterviewCell</string>
+	<key>13</key>
+	<string>jobmineCancelledCell</string>
 </dict>
 </plist>

@@ -257,6 +257,22 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
 				[self initJobmineMineRequest:aListing withURL:jobmineApplicationListURL];
 			}
                 break;
+				
+			case CategoryListingCencelledInterview:{
+				[self initJobmineMineRequest:aListing withURL:jobmineInterviewURL];
+			}
+				break;
+			case CategoryListingSinglePersonInterview:{
+				[self initJobmineMineRequest:aListing withURL:jobmineInterviewURL];
+			}
+				break;
+			case CategoryListingGroupInterview:{
+				[self initJobmineMineRequest:aListing withURL:jobmineInterviewURL];
+			}
+			case CategoryListingSpecialRequestInterview:{
+				[self initJobmineMineRequest:aListing withURL:jobmineInterviewURL];
+			}
+				break;
                 
             default:
                 break;

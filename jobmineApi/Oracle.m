@@ -45,6 +45,49 @@
 						
 					}
 				}
+			}else if ([[[aPrivousRequest url] absoluteString] isEqualToString:jobmineInterviewURL]){
+				if ([[aPrivousRequest delegate] isKindOfClass:[RequestResponser class]]) {
+					if ([((RequestResponser*)[aPrivousRequest delegate]) requestResponseForCategoryListing] == CategoryListingCencelledInterview) {
+						NSString* ICSID = @"";
+						RequestResponser* tempResp = [aPrivousRequest delegate];
+						ICSID = tempResp.jobmine.ICSID;
+						
+						ASIFormDataRequest* aRequest = [RequestFactory newJobmineRequestWithType:JobmineRequestTypeCanceledInterview1 withICSID:ICSID];
+						[aRequest setDelegate:[aPrivousRequest delegate]];
+						[aResponder fromState:aInputState translatedToState:JobmineRequestTypeCanceledInterview1 withRequest:aRequest];
+						
+					}else if ([((RequestResponser*)[aPrivousRequest delegate]) requestResponseForCategoryListing] == CategoryListingSinglePersonInterview){
+						NSString* ICSID = @"";
+						RequestResponser* tempResp = [aPrivousRequest delegate];
+						ICSID = tempResp.jobmine.ICSID;
+						
+						ASIFormDataRequest* aRequest = [RequestFactory newJobmineRequestWithType:JobmineRequestTypeInterview1 withICSID:ICSID];
+						[aRequest setDelegate:[aPrivousRequest delegate]];
+						[aResponder fromState:aInputState translatedToState:JobmineRequestTypeInterview1 withRequest:aRequest];
+						
+						
+					}else if ([((RequestResponser*)[aPrivousRequest delegate]) requestResponseForCategoryListing] == CategoryListingGroupInterview){
+						NSString* ICSID = @"";
+						RequestResponser* tempResp = [aPrivousRequest delegate];
+						ICSID = tempResp.jobmine.ICSID;
+						
+						ASIFormDataRequest* aRequest = [RequestFactory newJobmineRequestWithType:JobmineRequestTypeGroupedInterview1 withICSID:ICSID];
+						[aRequest setDelegate:[aPrivousRequest delegate]];
+						[aResponder fromState:aInputState translatedToState:JobmineRequestTypeGroupedInterview1 withRequest:aRequest];
+						
+						
+					}else if ([((RequestResponser*)[aPrivousRequest delegate]) requestResponseForCategoryListing] == CategoryListingSpecialRequestInterview){
+						NSString* ICSID = @"";
+						RequestResponser* tempResp = [aPrivousRequest delegate];
+						ICSID = tempResp.jobmine.ICSID;
+						
+						ASIFormDataRequest* aRequest = [RequestFactory newJobmineRequestWithType:JobmineRequestTypeSpcialRequestInterview1 withICSID:ICSID];
+						[aRequest setDelegate:[aPrivousRequest delegate]];
+						[aResponder fromState:aInputState translatedToState:JobmineRequestTypeSpcialRequestInterview1 withRequest:aRequest];
+						
+						
+					}
+				}
 			}else{
                 [NSException raise:@"At Start State Invalid URL" format:@""];
             }
@@ -101,7 +144,6 @@
             
             if (![nextStep isEqualToString:@""]) {
                 ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
-                //[nextRequest setRequestCookies:[aPrivousRequest requestCookies]];
                 [nextRequest setDelegate:[aPrivousRequest delegate]];
                 [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
             }else{
@@ -109,6 +151,138 @@
             }
 		}
 			break;
+			
+		case JobmineRequestTypeCanceledInterview1:{
+			
+			
+            NSString *nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"'" andEndingString:@"'"];
+            if (![nextStep isEqualToString:@""]) {
+                
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+                //[nextRequest setRequestCookies:[aPrivousRequest requestCookies]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeCanceledInterview2 withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+			
+			
+		}
+			break;
+		case JobmineRequestTypeCanceledInterview2:{
+			
+            NSString* nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"\n" andEndingString:@"\r"];
+            
+            if (![nextStep isEqualToString:@""]) {
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/canceledinterview.xls"]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+		}
+			break;
+			
+		case JobmineRequestTypeInterview1:{
+			
+			
+            NSString *nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"'" andEndingString:@"'"];
+            if (![nextStep isEqualToString:@""]) {
+                
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+                //[nextRequest setRequestCookies:[aPrivousRequest requestCookies]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeInterview2 withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+			
+			
+		}
+			break;
+		case JobmineRequestTypeInterview2:{
+			
+            NSString* nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"\n" andEndingString:@"\r"];
+            
+            if (![nextStep isEqualToString:@""]) {
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/interview.xls"]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+		}
+			break;
+			
+		case JobmineRequestTypeGroupedInterview1:{
+			
+			
+            NSString *nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"'" andEndingString:@"'"];
+            if (![nextStep isEqualToString:@""]) {
+                
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+                //[nextRequest setRequestCookies:[aPrivousRequest requestCookies]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeGroupedInterview2 withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+			
+			
+		}
+			break;
+		case JobmineRequestTypeGroupedInterview2:{
+			
+            NSString* nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"\n" andEndingString:@"\r"];
+            
+            if (![nextStep isEqualToString:@""]) {
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/groupinterview.xls"]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+		}
+			break;
+			
+			
+			
+		case JobmineRequestTypeSpcialRequestInterview1:{
+			
+			
+            NSString *nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"'" andEndingString:@"'"];
+            if (![nextStep isEqualToString:@""]) {
+                
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+                //[nextRequest setRequestCookies:[aPrivousRequest requestCookies]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeSpcialRequestInterview2 withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+			
+			
+		}
+			break;
+		case JobmineRequestTypeSpcialRequestInterview2:{
+			
+            NSString* nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"\n" andEndingString:@"\r"];
+            
+            if (![nextStep isEqualToString:@""]) {
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/spicalrequestinterview.xls"]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+		}
+			break;
+			
+			
         default:
             [NSException raise:@"State Not Found" format:@""];
             break;

@@ -38,13 +38,15 @@
 		E87289E015E5F10A0087184B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289DF15E5F10A0087184B /* SystemConfiguration.framework */; };
 		E87289E215E5F1100087184B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289E115E5F1100087184B /* MobileCoreServices.framework */; };
 		E87289E415E5F12E0087184B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E87289E315E5F12E0087184B /* libz.dylib */; };
+		E87316E9162FA35A004D4D33 /* jobmineCancelledCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E87316E8162FA35A004D4D33 /* jobmineCancelledCell.m */; };
+		E87316ED162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E87316EC162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.m */; };
 		E8734BEA15EAA18800DA7466 /* NSString+extraction.m in Sources */ = {isa = PBXBuildFile; fileRef = E870D0AA15E9825F00BC5270 /* NSString+extraction.m */; };
 		E8735D0916237951005260DB /* JobDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8735D0816237951005260DB /* JobDescriptionViewController.m */; };
+		E873CEFA1630FA37003B3B9D /* JobmineApplicationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E873CEF91630FA37003B3B9D /* JobmineApplicationDetail.m */; };
+		E873CEFD1630FA37003B3B9D /* JobmineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E873CEFC1630FA37003B3B9D /* JobmineInfo.m */; };
 		E87DD87415F157A800ABB02A /* TFHpple+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */; };
 		E87F01141623368700F648D3 /* Jobmine Mobile-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87F01131623368700F648D3 /* Jobmine Mobile-Info.plist */; };
 		E87F011A162343CA00F648D3 /* ApplicationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F0119162343CA00F648D3 /* ApplicationDetailViewController.m */; };
-		E87F011D16236CA700F648D3 /* JobmineApplicationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F011C16236CA600F648D3 /* JobmineApplicationDetail.m */; };
-		E87F012016236CA700F648D3 /* JobmineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F011F16236CA700F648D3 /* JobmineInfo.m */; };
 		E8B376CC15DEEBAA00E2ECD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */; };
 		E8B376CE15DEEBAA00E2ECD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */; };
 		E8B376D015DEEBAA00E2ECD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B376CF15DEEBAA00E2ECD8 /* CoreGraphics.framework */; };
@@ -63,6 +65,8 @@
 		E8B46AFD15E170EA00442360 /* jobmineDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AFC15E170EA00442360 /* jobmineDictionary.m */; };
 		E8B46B0015E186F400442360 /* URLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AFF15E186F400442360 /* URLLoader.m */; };
 		E8C86C9815E925DB00EE54B3 /* RequestResponser.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C86C9715E925DB00EE54B3 /* RequestResponser.m */; };
+		E8CE6D69162F822B00BC11C2 /* jobmineSingleInterviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE6D68162F822B00BC11C2 /* jobmineSingleInterviewCell.m */; };
+		E8CE6D6D162F866C00BC11C2 /* jobmineGroupedInterviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE6D6C162F866C00BC11C2 /* jobmineGroupedInterviewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,17 +134,21 @@
 		E87289DF15E5F10A0087184B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E87289E115E5F1100087184B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E87289E315E5F12E0087184B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E87316E7162FA35A004D4D33 /* jobmineCancelledCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineCancelledCell.h; sourceTree = "<group>"; };
+		E87316E8162FA35A004D4D33 /* jobmineCancelledCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineCancelledCell.m; sourceTree = "<group>"; };
+		E87316EB162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineSpcialRequestInterviewCell.h; sourceTree = "<group>"; };
+		E87316EC162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineSpcialRequestInterviewCell.m; sourceTree = "<group>"; };
 		E8735D0716237951005260DB /* JobDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDescriptionViewController.h; sourceTree = "<group>"; };
 		E8735D0816237951005260DB /* JobDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDescriptionViewController.m; sourceTree = "<group>"; };
+		E873CEF81630FA37003B3B9D /* JobmineApplicationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineApplicationDetail.h; sourceTree = "<group>"; };
+		E873CEF91630FA37003B3B9D /* JobmineApplicationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineApplicationDetail.m; sourceTree = "<group>"; };
+		E873CEFB1630FA37003B3B9D /* JobmineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineInfo.h; sourceTree = "<group>"; };
+		E873CEFC1630FA37003B3B9D /* JobmineInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineInfo.m; sourceTree = "<group>"; };
 		E87DD87215F157A800ABB02A /* TFHpple+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TFHpple+CoreData.h"; sourceTree = "<group>"; };
 		E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TFHpple+CoreData.m"; sourceTree = "<group>"; };
 		E87F01131623368700F648D3 /* Jobmine Mobile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jobmine Mobile-Info.plist"; sourceTree = "<group>"; };
 		E87F0118162343CA00F648D3 /* ApplicationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailViewController.h; sourceTree = "<group>"; };
 		E87F0119162343CA00F648D3 /* ApplicationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailViewController.m; sourceTree = "<group>"; };
-		E87F011B16236CA600F648D3 /* JobmineApplicationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineApplicationDetail.h; sourceTree = "<group>"; };
-		E87F011C16236CA600F648D3 /* JobmineApplicationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineApplicationDetail.m; sourceTree = "<group>"; };
-		E87F011E16236CA700F648D3 /* JobmineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineInfo.h; sourceTree = "<group>"; };
-		E87F011F16236CA700F648D3 /* JobmineInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineInfo.m; sourceTree = "<group>"; };
 		E8B376C715DEEBAA00E2ECD8 /* Jobmine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jobmine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B376CB15DEEBAA00E2ECD8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E8B376CD15DEEBAA00E2ECD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,6 +174,10 @@
 		E8B46AFF15E186F400442360 /* URLLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLLoader.m; sourceTree = "<group>"; };
 		E8C86C9615E925DB00EE54B3 /* RequestResponser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestResponser.h; sourceTree = "<group>"; };
 		E8C86C9715E925DB00EE54B3 /* RequestResponser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestResponser.m; sourceTree = "<group>"; };
+		E8CE6D67162F822B00BC11C2 /* jobmineSingleInterviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineSingleInterviewCell.h; sourceTree = "<group>"; };
+		E8CE6D68162F822B00BC11C2 /* jobmineSingleInterviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineSingleInterviewCell.m; sourceTree = "<group>"; };
+		E8CE6D6B162F866C00BC11C2 /* jobmineGroupedInterviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineGroupedInterviewCell.h; sourceTree = "<group>"; };
+		E8CE6D6C162F866C00BC11C2 /* jobmineGroupedInterviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineGroupedInterviewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,10 +235,10 @@
 		E870958015EEE75800DE4BED /* generatedFile */ = {
 			isa = PBXGroup;
 			children = (
-				E87F011E16236CA700F648D3 /* JobmineInfo.h */,
-				E87F011F16236CA700F648D3 /* JobmineInfo.m */,
-				E87F011B16236CA600F648D3 /* JobmineApplicationDetail.h */,
-				E87F011C16236CA600F648D3 /* JobmineApplicationDetail.m */,
+				E873CEFB1630FA37003B3B9D /* JobmineInfo.h */,
+				E873CEFC1630FA37003B3B9D /* JobmineInfo.m */,
+				E873CEF81630FA37003B3B9D /* JobmineApplicationDetail.h */,
+				E873CEF91630FA37003B3B9D /* JobmineApplicationDetail.m */,
 			);
 			name = generatedFile;
 			sourceTree = "<group>";
@@ -259,6 +271,14 @@
 				E8717353160EC52400A3935C /* jobmineApplicationShortListCell.m */,
 				E870B74F161FA430007915C1 /* jobmineAllApplicationCell.h */,
 				E870B750161FA430007915C1 /* jobmineAllApplicationCell.m */,
+				E8CE6D67162F822B00BC11C2 /* jobmineSingleInterviewCell.h */,
+				E8CE6D68162F822B00BC11C2 /* jobmineSingleInterviewCell.m */,
+				E8CE6D6B162F866C00BC11C2 /* jobmineGroupedInterviewCell.h */,
+				E8CE6D6C162F866C00BC11C2 /* jobmineGroupedInterviewCell.m */,
+				E87316E7162FA35A004D4D33 /* jobmineCancelledCell.h */,
+				E87316E8162FA35A004D4D33 /* jobmineCancelledCell.m */,
+				E87316EB162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.h */,
+				E87316EC162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.m */,
 			);
 			name = uiCellsAndConfingerator;
 			sourceTree = "<group>";
@@ -590,9 +610,13 @@
 				E8717358160ECCDC00A3935C /* jobmineCellConfigetor.m in Sources */,
 				E870B751161FA430007915C1 /* jobmineAllApplicationCell.m in Sources */,
 				E87F011A162343CA00F648D3 /* ApplicationDetailViewController.m in Sources */,
-				E87F011D16236CA700F648D3 /* JobmineApplicationDetail.m in Sources */,
-				E87F012016236CA700F648D3 /* JobmineInfo.m in Sources */,
 				E8735D0916237951005260DB /* JobDescriptionViewController.m in Sources */,
+				E8CE6D69162F822B00BC11C2 /* jobmineSingleInterviewCell.m in Sources */,
+				E8CE6D6D162F866C00BC11C2 /* jobmineGroupedInterviewCell.m in Sources */,
+				E87316E9162FA35A004D4D33 /* jobmineCancelledCell.m in Sources */,
+				E87316ED162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.m in Sources */,
+				E873CEFA1630FA37003B3B9D /* JobmineApplicationDetail.m in Sources */,
+				E873CEFD1630FA37003B3B9D /* JobmineInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

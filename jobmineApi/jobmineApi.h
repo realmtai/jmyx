@@ -27,6 +27,12 @@ typedef enum{
     CategoryListingApplicationShortList = 10,
     CategoryListingAllApplicationList,
     CategoryListingActiveApplicationList,
+	
+	CategoryListingCencelledInterview,
+	CategoryListingSinglePersonInterview,
+	CategoryListingGroupInterview,
+	CategoryListingSpecialRequestInterview,
+	
 	CategoryListingJobApplicationDetail = 100
 }CategoryListing;
 

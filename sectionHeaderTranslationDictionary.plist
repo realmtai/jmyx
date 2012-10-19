@@ -6,6 +6,14 @@
 	<string>All Application</string>
 	<key>12</key>
 	<string>Active Application</string>
+	<key>14</key>
+	<string>Interview</string>
+	<key>15</key>
+	<string>Grouped Interview</string>
+	<key>13</key>
+	<string>Cancelled Interview</string>
+	<key>16</key>
+	<string>Spcial Request Interview</string>
 	<key>10</key>
 	<string>Application Short List</string>
 </dict>

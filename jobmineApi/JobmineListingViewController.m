@@ -238,6 +238,18 @@
         case 2:
             [self.jobmine updateSessionsWithListing:CategoryListingAllApplicationList];
             break;
+        case 3:
+            [self.jobmine updateSessionsWithListing:CategoryListingCencelledInterview];
+            break;
+        case 4:
+            [self.jobmine updateSessionsWithListing:CategoryListingSinglePersonInterview];
+            break;
+        case 5:
+            [self.jobmine updateSessionsWithListing:CategoryListingGroupInterview];
+            break;
+        case 6:
+            [self.jobmine updateSessionsWithListing:CategoryListingSpecialRequestInterview];
+            break;
             
         default:
             break;
@@ -434,6 +446,10 @@
     UIActionSheet* refeshSheet = [[UIActionSheet alloc] initWithTitle:@"Category To Refresh" delegate:self cancelButtonTitle:@"Done" destructiveButtonTitle:nil otherButtonTitles:@"re-login",
 								  @"Applocation Short List",
 								  @"All Applocation",
+								  @"Cancelled Interview",
+								  @"Interview",
+								  @"Group Interview",
+								  @"Spcial Request Interview",
 								  nil];
     [refeshSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     [refeshSheet showInView:self.view];

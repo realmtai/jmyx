@@ -2,7 +2,7 @@
 //  JobmineInfo.m
 //  Jobmine Mobile
 //
-//  Created by edwin on 10/8/12.
+//  Created by edwin on 10/18/12.
 //  Copyright (c) 2012 edwin. All rights reserved.
 //
 

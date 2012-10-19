@@ -10,7 +10,7 @@
 
 @implementation TFHpple (CoreData)
 
-typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, NSManagedObjectContext* aContext);
+typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext);
 
 
 + (void) insertDataString: (NSData*) aJobmineResponse
@@ -28,8 +28,6 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 																	   encoding:NSUTF8StringEncoding]
 										forJobID:((TFHppleElement*)[arrayOfEle lastObject]).content.intValue
 									 withContext:aContext];
-			
-			
 		}
 			break;
         case CategoryListingApplicationShortList:
@@ -42,6 +40,22 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 			//TODO: need to add CategoryListingActiveApplicationList
 			break;
 		case CategoryListingAllApplicationList:{
+            NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"/html/body/table/tr"];
+            [self updateJobmineListWithLocalCoreData:arrayOfEle forCategory:aCategory withIdCol:0 withManagedContext:aContext];
+		}
+		case CategoryListingCencelledInterview:{
+            NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"/html/body/table/tr"];
+            [self updateJobmineListWithLocalCoreData:arrayOfEle forCategory:aCategory withIdCol:0 withManagedContext:aContext];
+		}
+		case CategoryListingSinglePersonInterview:{
+            NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"/html/body/table/tr"];
+            [self updateJobmineListWithLocalCoreData:arrayOfEle forCategory:aCategory withIdCol:0 withManagedContext:aContext];
+		}
+		case CategoryListingGroupInterview:{
+            NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"/html/body/table/tr"];
+            [self updateJobmineListWithLocalCoreData:arrayOfEle forCategory:aCategory withIdCol:0 withManagedContext:aContext];
+		}
+		case CategoryListingSpecialRequestInterview:{
             NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"/html/body/table/tr"];
             [self updateJobmineListWithLocalCoreData:arrayOfEle forCategory:aCategory withIdCol:0 withManagedContext:aContext];
 		}
@@ -171,15 +185,60 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
         }
             break;
 		case CategoryListingActiveApplicationList:
+			
 			break;
 		case CategoryListingAllApplicationList:{
 			NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
             if (jobmineID.intValue != 0) {
-                    JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
-                                                                       inManagedObjectContext:aContext];
-                    aInfo.jID = jobmineID;
-                    aInfo.applicationListing = @(aCategory);
-                    aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
+				JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
+																   inManagedObjectContext:aContext];
+				aInfo.jID = jobmineID;
+				aInfo.applicationListing = @(aCategory);
+				aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
+            }
+		}
+			break;
+		case CategoryListingSinglePersonInterview:{
+			NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
+            if (jobmineID.intValue != 0) {
+				JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
+																   inManagedObjectContext:aContext];
+				aInfo.jID = jobmineID;
+				aInfo.applicationListing = @(aCategory);
+				aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
+            }
+		}
+			break;
+		case CategoryListingGroupInterview:{
+			NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
+            if (jobmineID.intValue != 0) {
+				JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
+																   inManagedObjectContext:aContext];
+				aInfo.jID = jobmineID;
+				aInfo.applicationListing = @(aCategory);
+				aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
+            }
+		}
+			break;
+		case CategoryListingCencelledInterview:{
+			NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
+            if (jobmineID.intValue != 0) {
+				JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
+																   inManagedObjectContext:aContext];
+				aInfo.jID = jobmineID;
+				aInfo.applicationListing = @(aCategory);
+				aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
+            }
+		}
+			break;
+		case CategoryListingSpecialRequestInterview:{
+			NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
+            if (jobmineID.intValue != 0) {
+				JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
+																   inManagedObjectContext:aContext];
+				aInfo.jID = jobmineID;
+				aInfo.applicationListing = @(aCategory);
+				aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
             }
 		}
 			break;
@@ -204,12 +263,8 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 	NSError* fetchError = nil;
 	
 	NSArray* allAppWithIDResult = [aContext executeFetchRequest:allAppWithId error:&fetchError];
-	switch ([allAppWithIDResult count]) {
-		case 0:
-			return aCreatorBlock(obj, aContext);
-		default:
-			return [allAppWithIDResult lastObject];
-	}
+	
+	return aCreatorBlock(obj, [allAppWithIDResult lastObject], aContext);
 	
 	
 }
@@ -227,7 +282,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
     switch (aCategory) {
         case CategoryListingApplicationShortList:
         {
-			applicationCreation createApplicationShortListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, NSManagedObjectContext* aContext){
+			applicationCreation createApplicationShortListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext){
 				JobmineApplicationDetail* resultApplicationDetail = nil;
 				NSString* appTitle = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:1]).content;
 				NSString* appEmployeeName = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:2]).content;
@@ -237,8 +292,15 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 				//TODO: add Date conversion
 				//NSDate* appLDTA = nil;
 				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:7]).content integerValue]);
-				resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:[@"" stringByAppendingFormat:@"%@",NSStringFromClass([JobmineApplicationDetail class])]
-																		inManagedObjectContext:aContext];
+				
+				if (!aDetailedApp) {
+					resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineApplicationDetail class])
+																			inManagedObjectContext:aContext];
+				} else {
+					resultApplicationDetail = aDetailedApp;
+				}
+				
+				
 				resultApplicationDetail.jID = jobmineID;
 				resultApplicationDetail.jobTitle = appTitle;
 				resultApplicationDetail.employer = appEmployeeName;
@@ -261,7 +323,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 			break;
 		case CategoryListingAllApplicationList:
 		{
-			applicationCreation createAllApplicationListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, NSManagedObjectContext* aContext){
+			applicationCreation createAllApplicationListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext){
 				JobmineApplicationDetail* resultApplicationDetail = nil;
 				NSString* appTitle = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:1]).content;
 				NSString* appEmployeeName = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:2]).content;
@@ -273,8 +335,13 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 				//TODO: add Date conversion
 				//NSDate* appLDTA = nil;
 				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
-				resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:[@"" stringByAppendingFormat:@"%@",NSStringFromClass([JobmineApplicationDetail class])]
-																		inManagedObjectContext:aContext];
+				
+				if (!aDetailedApp) {
+					resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineApplicationDetail class])
+																			inManagedObjectContext:aContext];
+				} else {
+					resultApplicationDetail = aDetailedApp;
+				}
 				resultApplicationDetail.jID = jobmineID;
 				resultApplicationDetail.jobTitle = appTitle;
 				resultApplicationDetail.employer = appEmployeeName;
@@ -284,6 +351,187 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, N
 				resultApplicationDetail.jobStatus = appStatus;
 				resultApplicationDetail.applicationStatus = appApplicatoinStatus;
 				resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
+				return resultApplicationDetail;
+			};
+			return [self fetchAndUpdateSingleApplicationDetail:obj
+												 withJobmineID:jobmineID
+												   forCategory:aCategory
+											withManagedContext:aContext
+								  withApplicationCreationBlock:createAllApplicationListAppFromObject];
+		}
+			break;
+		case CategoryListingCencelledInterview:
+		{
+			applicationCreation createAllApplicationListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext){
+				JobmineApplicationDetail* resultApplicationDetail = nil;
+				NSString* appTitle = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:2]).content;
+				NSString* appEmployeeName = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:1]).content;
+//				NSString* appEmployeeUnit = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content;
+//				//NSString* appLocation = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
+//				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
+				//TODO: add Date conversion
+				//NSDate* appLDTA = nil;
+				//NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
+				
+				if (!aDetailedApp) {
+					resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineApplicationDetail class])
+																			inManagedObjectContext:aContext];
+				} else {
+					resultApplicationDetail = aDetailedApp;
+				}
+				
+				resultApplicationDetail.jID = jobmineID;
+				resultApplicationDetail.jobTitle = appTitle;
+				resultApplicationDetail.employer = appEmployeeName;
+				//resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
+//				resultApplicationDetail.employmentUnit = appEmployeeUnit;
+//				resultApplicationDetail.workingTerm = appWorkTerm;
+//				//resultApplicationDetail.employmentLocation = appLocation;
+//				resultApplicationDetail.jobStatus = appStatus;
+//				resultApplicationDetail.applicationStatus = appApplicatoinStatus;
+//				resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
+				return resultApplicationDetail;
+			};
+			return [self fetchAndUpdateSingleApplicationDetail:obj
+												 withJobmineID:jobmineID
+												   forCategory:aCategory
+											withManagedContext:aContext
+								  withApplicationCreationBlock:createAllApplicationListAppFromObject];
+		}
+			break;
+		case CategoryListingSinglePersonInterview:
+		{
+			applicationCreation createAllApplicationListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext){
+				JobmineApplicationDetail* resultApplicationDetail = nil;
+				NSString* appEmployeeName = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:1]).content;
+				NSString* appTitle = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:2]).content;
+				NSString* appInterviewType = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+				
+				NSNumber* appInterviewLength = @(((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:7]).content.intValue);
+				NSString* appInterviewRoom = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:8]).content;
+				NSString* appInterviewInstrusction = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content;
+				NSString* appInterviewer = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:10]).content;
+				NSString* appJobStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:11]).content;
+				NSString* appDateAndTime = [NSString stringWithFormat:@"%@ %@",
+											((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content,
+											((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content];
+				NSDateFormatter* aDateFormator = [NSDateFormatter new];
+				[aDateFormator setDateFormat:@"dd MMM yyyy hh:mm aa"];
+//				NSString* appEmployeeUnit = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content;
+				//NSString* appLocation = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
+//				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
+//				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
+				
+				if (!aDetailedApp) {
+					resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineApplicationDetail class])
+																			inManagedObjectContext:aContext];
+				} else {
+					resultApplicationDetail = aDetailedApp;
+				}
+				
+				resultApplicationDetail.jID = jobmineID;
+				resultApplicationDetail.jobTitle = appTitle;
+				resultApplicationDetail.employer = appEmployeeName;
+				resultApplicationDetail.interviewType = appInterviewType;
+				resultApplicationDetail.interviewLength = appInterviewLength;
+				resultApplicationDetail.interviewRoom = appInterviewRoom;
+				resultApplicationDetail.interviewInstructions = appInterviewInstrusction;
+				resultApplicationDetail.interviewer = appInterviewer;
+				resultApplicationDetail.jobStatus = appJobStatus;
+				resultApplicationDetail.interviewDate = [aDateFormator dateFromString:appDateAndTime];
+//				resultApplicationDetail.employmentUnit = appEmployeeUnit;
+//				resultApplicationDetail.workingTerm = appWorkTerm;
+//				//resultApplicationDetail.employmentLocation = appLocation;
+//				resultApplicationDetail.jobStatus = appStatus;
+//				resultApplicationDetail.applicationStatus = appApplicatoinStatus;
+//				resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
+				return resultApplicationDetail;
+			};
+			return [self fetchAndUpdateSingleApplicationDetail:obj
+												 withJobmineID:jobmineID
+												   forCategory:aCategory
+											withManagedContext:aContext
+								  withApplicationCreationBlock:createAllApplicationListAppFromObject];
+		}
+			break;
+		case CategoryListingGroupInterview:
+		{
+			applicationCreation createAllApplicationListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext){
+				JobmineApplicationDetail* resultApplicationDetail = nil;
+				NSString* appTitle = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:2]).content;
+				NSString* appEmployeeName = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:1]).content;
+//				NSString* appEmployeeUnit = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content;
+				//NSString* appLocation = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
+//				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
+				NSString* appInterviewRoom = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
+				NSString* appInterviewInstrusction = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:7]).content;
+				NSString* appDateAndTime = [NSString stringWithFormat:@"%@ %@",
+											((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content,
+											((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content];
+				NSDateFormatter* aDateFormator = [NSDateFormatter new];
+				[aDateFormator setDateFormat:@"dd MMM yyyy hh:mm aa"];
+				
+				if (!aDetailedApp) {
+					resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineApplicationDetail class])
+																			inManagedObjectContext:aContext];
+				} else {
+					resultApplicationDetail = aDetailedApp;
+				}
+				
+				resultApplicationDetail.jID = jobmineID;
+				resultApplicationDetail.jobTitle = appTitle;
+				resultApplicationDetail.employer = appEmployeeName;
+				resultApplicationDetail.groupInterviewDate = [aDateFormator dateFromString:appDateAndTime];
+				resultApplicationDetail.groupInterviewRoom = appInterviewRoom;
+				resultApplicationDetail.groupInterviewInstruction = appInterviewInstrusction;
+				//resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
+				return resultApplicationDetail;
+			};
+			return [self fetchAndUpdateSingleApplicationDetail:obj
+												 withJobmineID:jobmineID
+												   forCategory:aCategory
+											withManagedContext:aContext
+								  withApplicationCreationBlock:createAllApplicationListAppFromObject];
+		}
+			break;
+		case CategoryListingSpecialRequestInterview:
+		{
+			applicationCreation createAllApplicationListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext){
+				JobmineApplicationDetail* resultApplicationDetail = nil;
+				NSString* appTitle = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:2]).content;
+				NSString* appEmployeeName = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:1]).content;
+				NSString* appInterviewInstrusction = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content;
+				//NSString* appLocation = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+//				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
+//				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
+				//TODO: add Date conversion
+				//NSDate* appLDTA = nil;
+//				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
+
+				
+				if (!aDetailedApp) {
+					resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineApplicationDetail class])
+																			inManagedObjectContext:aContext];
+				} else {
+					resultApplicationDetail = aDetailedApp;
+				}
+				
+				resultApplicationDetail.jID = jobmineID;
+				resultApplicationDetail.jobTitle = appTitle;
+				resultApplicationDetail.employer = appEmployeeName;
+				resultApplicationDetail.spicalRequestInstruction = appInterviewInstrusction;
+//				resultApplicationDetail.workingTerm = appWorkTerm;
+				//resultApplicationDetail.employmentLocation = appLocation;
+//				resultApplicationDetail.jobStatus = appStatus;
+//				resultApplicationDetail.applicationStatus = appApplicatoinStatus;
+//				resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
 				return resultApplicationDetail;
 			};
 			return [self fetchAndUpdateSingleApplicationDetail:obj
