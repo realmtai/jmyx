@@ -43,6 +43,9 @@
             
             break;
         case JobmineRequestTypeActiveApplication1:
+            aJobmineRequest = [RequestFactory newRequest:RequestTypeJobminePOSTRequest withURL:jobmineApplicationListURL];
+            [aJobmineRequest addPostValue:jobminePostICActionActiveApplication forKey:@"ICAction"];
+			break;
         case JobmineRequestTypeAllApplication1:
             aJobmineRequest = [RequestFactory newRequest:RequestTypeJobminePOSTRequest withURL:jobmineApplicationListURL];
             [aJobmineRequest addPostValue:jobminePostICActionAllApplication forKey:@"ICAction"];

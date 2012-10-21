@@ -11,6 +11,8 @@
 #import "RequestFactory.h"
 #import "JobmineInfo.h"
 
+#import "SVProgressHUD.h"
+
 @class jobmineApi;
 
 @protocol jobmineNetworkDelegate <NSObject>

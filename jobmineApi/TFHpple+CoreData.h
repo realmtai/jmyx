@@ -11,9 +11,12 @@
 #import "jobmineApi.h"
 #import "JobmineInfo.h"
 #import "JobmineApplicationDetail.h"
+#import "NSString+encoding.h"
+#import "SVProgressHUD.h"
 
 @interface TFHpple (CoreData)
 
 + (void) insertDataString: (NSData*) aJobmineResponse forCategory: (CategoryListing) aCategory withManagedContext: (NSManagedObjectContext*) aContext;
++ (NSString* ) insertJobmineApplicationDetail: (NSData* ) HTMLData withContext: (NSManagedObjectContext* ) aContext;
 
 @end

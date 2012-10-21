@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E81C8A0B16334E2300C385D8 /* jobmine@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = E81C8A0A16334E2300C385D8 /* jobmine@x2.png */; };
+		E81C8A0D16334E4200C385D8 /* jobmine@x1.png in Resources */ = {isa = PBXBuildFile; fileRef = E81C8A0C16334E4200C385D8 /* jobmine@x1.png */; };
+		E81C8A0F16334E4900C385D8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E81C8A0E16334E4900C385D8 /* Default@2x.png */; };
+		E81C8A1116334E4F00C385D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E81C8A1016334E4F00C385D8 /* Default.png */; };
+		E81C8A161633598E00C385D8 /* NSString+encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E81C8A151633598E00C385D8 /* NSString+encoding.m */; };
+		E81C8A181633615600C385D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E81C8A171633615600C385D8 /* Default-568h@2x.png */; };
 		E86FF2A215E476AD004A18DB /* URLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B46AFF15E186F400442360 /* URLLoader.m */; };
 		E8700F9515EB47A5000E60DB /* Iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8700F9415EB47A5000E60DB /* Iphone.storyboard */; };
 		E8702B8E161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */; };
@@ -44,6 +50,7 @@
 		E8735D0916237951005260DB /* JobDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8735D0816237951005260DB /* JobDescriptionViewController.m */; };
 		E873CEFA1630FA37003B3B9D /* JobmineApplicationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E873CEF91630FA37003B3B9D /* JobmineApplicationDetail.m */; };
 		E873CEFD1630FA37003B3B9D /* JobmineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E873CEFC1630FA37003B3B9D /* JobmineInfo.m */; };
+		E87A059D1632E6B8002A570D /* quickSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87A059C1632E6B8002A570D /* quickSearchResultViewController.m */; };
 		E87DD87415F157A800ABB02A /* TFHpple+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */; };
 		E87F01141623368700F648D3 /* Jobmine Mobile-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87F01131623368700F648D3 /* Jobmine Mobile-Info.plist */; };
 		E87F011A162343CA00F648D3 /* ApplicationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F0119162343CA00F648D3 /* ApplicationDetailViewController.m */; };
@@ -67,6 +74,9 @@
 		E8C86C9815E925DB00EE54B3 /* RequestResponser.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C86C9715E925DB00EE54B3 /* RequestResponser.m */; };
 		E8CE6D69162F822B00BC11C2 /* jobmineSingleInterviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE6D68162F822B00BC11C2 /* jobmineSingleInterviewCell.m */; };
 		E8CE6D6D162F866C00BC11C2 /* jobmineGroupedInterviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE6D6C162F866C00BC11C2 /* jobmineGroupedInterviewCell.m */; };
+		E8F5154F163393FB00124082 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8F5154C163393FB00124082 /* SVProgressHUD.bundle */; };
+		E8F51550163393FB00124082 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F5154E163393FB00124082 /* SVProgressHUD.m */; };
+		E8FA2A3F16336B0D000FFF41 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8FA2A3E16336B0D000FFF41 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +90,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E81C8A0A16334E2300C385D8 /* jobmine@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobmine@x2.png"; sourceTree = "<group>"; };
+		E81C8A0C16334E4200C385D8 /* jobmine@x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobmine@x1.png"; sourceTree = "<group>"; };
+		E81C8A0E16334E4900C385D8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E81C8A1016334E4F00C385D8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E81C8A141633598E00C385D8 /* NSString+encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+encoding.h"; sourceTree = "<group>"; };
+		E81C8A151633598E00C385D8 /* NSString+encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+encoding.m"; sourceTree = "<group>"; };
+		E81C8A171633615600C385D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E8700F9415EB47A5000E60DB /* Iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Iphone.storyboard; sourceTree = "<group>"; };
 		E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sectionHeaderTranslationDictionary.plist; sourceTree = "<group>"; };
 		E87075AB15E8382C00BF1483 /* RequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestFactory.h; sourceTree = "<group>"; };
@@ -100,8 +117,8 @@
 		E870BE0015EBDD8B0047D35E /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		E870D0A115E96B7900BC5270 /* Oracle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oracle.h; sourceTree = "<group>"; };
 		E870D0A215E96B7900BC5270 /* Oracle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Oracle.m; sourceTree = "<group>"; };
-		E870D0A915E9825F00BC5270 /* NSString+extraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extraction.h"; sourceTree = "<group>"; };
-		E870D0AA15E9825F00BC5270 /* NSString+extraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extraction.m"; sourceTree = "<group>"; };
+		E870D0A915E9825F00BC5270 /* NSString+extraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+extraction.h"; path = "jobmineApi/NSString+extraction.h"; sourceTree = "<group>"; };
+		E870D0AA15E9825F00BC5270 /* NSString+extraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+extraction.m"; path = "jobmineApi/NSString+extraction.m"; sourceTree = "<group>"; };
 		E870F97C1620C25B007B891E /* bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bug.jpg; sourceTree = "<group>"; };
 		E870F97F1620C7CB007B891E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E8717352160EC52400A3935C /* jobmineApplicationShortListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineApplicationShortListCell.h; sourceTree = "<group>"; };
@@ -144,6 +161,8 @@
 		E873CEF91630FA37003B3B9D /* JobmineApplicationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineApplicationDetail.m; sourceTree = "<group>"; };
 		E873CEFB1630FA37003B3B9D /* JobmineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobmineInfo.h; sourceTree = "<group>"; };
 		E873CEFC1630FA37003B3B9D /* JobmineInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobmineInfo.m; sourceTree = "<group>"; };
+		E87A059B1632E6B8002A570D /* quickSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quickSearchResultViewController.h; sourceTree = "<group>"; };
+		E87A059C1632E6B8002A570D /* quickSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = quickSearchResultViewController.m; sourceTree = "<group>"; };
 		E87DD87215F157A800ABB02A /* TFHpple+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TFHpple+CoreData.h"; sourceTree = "<group>"; };
 		E87DD87315F157A800ABB02A /* TFHpple+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TFHpple+CoreData.m"; sourceTree = "<group>"; };
 		E87F01131623368700F648D3 /* Jobmine Mobile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jobmine Mobile-Info.plist"; sourceTree = "<group>"; };
@@ -178,6 +197,10 @@
 		E8CE6D68162F822B00BC11C2 /* jobmineSingleInterviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineSingleInterviewCell.m; sourceTree = "<group>"; };
 		E8CE6D6B162F866C00BC11C2 /* jobmineGroupedInterviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineGroupedInterviewCell.h; sourceTree = "<group>"; };
 		E8CE6D6C162F866C00BC11C2 /* jobmineGroupedInterviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineGroupedInterviewCell.m; sourceTree = "<group>"; };
+		E8F5154C163393FB00124082 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		E8F5154D163393FB00124082 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		E8F5154E163393FB00124082 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		E8FA2A3E16336B0D000FFF41 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +235,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E81C8A1216334F8100C385D8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E81C8A171633615600C385D8 /* Default-568h@2x.png */,
+				E81C8A1016334E4F00C385D8 /* Default.png */,
+				E81C8A0E16334E4900C385D8 /* Default@2x.png */,
+				E81C8A0C16334E4200C385D8 /* jobmine@x1.png */,
+				E81C8A0A16334E2300C385D8 /* jobmine@x2.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E81C8A131633597300C385D8 /* uitity */ = {
+			isa = PBXGroup;
+			children = (
+				E8F5154C163393FB00124082 /* SVProgressHUD.bundle */,
+				E8F5154D163393FB00124082 /* SVProgressHUD.h */,
+				E8F5154E163393FB00124082 /* SVProgressHUD.m */,
+				E870D0A915E9825F00BC5270 /* NSString+extraction.h */,
+				E870D0AA15E9825F00BC5270 /* NSString+extraction.m */,
+				E81C8A141633598E00C385D8 /* NSString+encoding.h */,
+				E81C8A151633598E00C385D8 /* NSString+encoding.m */,
+			);
+			name = uitity;
+			sourceTree = "<group>";
+		};
 		E870956315EECFCE00DE4BED /* HTML Paser + coreData update */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +403,8 @@
 				E8707EB3161FA96000D76738 /* jobmineSectionNumberToUICellID.plist */,
 				E8702B8D161E7C96009A1522 /* sectionHeaderTranslationDictionary.plist */,
 				E8717355160ECA1100A3935C /* uiCellsAndConfingerator */,
+				E87A059B1632E6B8002A570D /* quickSearchResultViewController.h */,
+				E87A059C1632E6B8002A570D /* quickSearchResultViewController.m */,
 			);
 			name = screen1;
 			sourceTree = "<group>";
@@ -383,11 +434,14 @@
 		E8B376BC15DEEBAA00E2ECD8 = {
 			isa = PBXGroup;
 			children = (
+				E8FA2A3E16336B0D000FFF41 /* Settings.bundle */,
+				E81C8A131633597300C385D8 /* uitity */,
 				E8700F9415EB47A5000E60DB /* Iphone.storyboard */,
 				E870BDFE15EBD8710047D35E /* UI */,
 				E8B376D315DEEBAA00E2ECD8 /* jobmineApi */,
 				E8B376EF15DEEBAA00E2ECD8 /* jobmineApiTests */,
 				E8B376CA15DEEBAA00E2ECD8 /* Frameworks */,
+				E81C8A1216334F8100C385D8 /* Images */,
 				E8B376C815DEEBAA00E2ECD8 /* Products */,
 				E8B376D415DEEBAA00E2ECD8 /* Supporting Files */,
 				E87289A315E5EEB70087184B /* junk */,
@@ -431,8 +485,6 @@
 				E8B46AF815E16F4B00442360 /* jobmineApi.m */,
 				E870D0A115E96B7900BC5270 /* Oracle.h */,
 				E870D0A215E96B7900BC5270 /* Oracle.m */,
-				E870D0A915E9825F00BC5270 /* NSString+extraction.h */,
-				E870D0AA15E9825F00BC5270 /* NSString+extraction.m */,
 				E87FE51015E8ADF4009F0E80 /* Network */,
 				E870956315EECFCE00DE4BED /* HTML Paser + coreData update */,
 			);
@@ -547,6 +599,13 @@
 				E8707EB4161FA96000D76738 /* jobmineSectionNumberToUICellID.plist in Resources */,
 				E870F97D1620C25B007B891E /* bug.jpg in Resources */,
 				E87F01141623368700F648D3 /* Jobmine Mobile-Info.plist in Resources */,
+				E81C8A0B16334E2300C385D8 /* jobmine@x2.png in Resources */,
+				E81C8A0D16334E4200C385D8 /* jobmine@x1.png in Resources */,
+				E81C8A0F16334E4900C385D8 /* Default@2x.png in Resources */,
+				E81C8A1116334E4F00C385D8 /* Default.png in Resources */,
+				E81C8A181633615600C385D8 /* Default-568h@2x.png in Resources */,
+				E8FA2A3F16336B0D000FFF41 /* Settings.bundle in Resources */,
+				E8F5154F163393FB00124082 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +676,9 @@
 				E87316ED162FA5EA004D4D33 /* jobmineSpcialRequestInterviewCell.m in Sources */,
 				E873CEFA1630FA37003B3B9D /* JobmineApplicationDetail.m in Sources */,
 				E873CEFD1630FA37003B3B9D /* JobmineInfo.m in Sources */,
+				E87A059D1632E6B8002A570D /* quickSearchResultViewController.m in Sources */,
+				E81C8A161633598E00C385D8 /* NSString+encoding.m in Sources */,
+				E8F51550163393FB00124082 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

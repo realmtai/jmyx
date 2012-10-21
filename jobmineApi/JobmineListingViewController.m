@@ -235,19 +235,23 @@
         case 1:
             [self.jobmine updateSessionsWithListing:CategoryListingApplicationShortList];
             break;
-        case 2:
-            [self.jobmine updateSessionsWithListing:CategoryListingAllApplicationList];
+		case 2:
+			
+            [self.jobmine updateSessionsWithListing:CategoryListingActiveApplicationList];
             break;
         case 3:
-            [self.jobmine updateSessionsWithListing:CategoryListingCencelledInterview];
+            [self.jobmine updateSessionsWithListing:CategoryListingAllApplicationList];
             break;
         case 4:
-            [self.jobmine updateSessionsWithListing:CategoryListingSinglePersonInterview];
+            [self.jobmine updateSessionsWithListing:CategoryListingCencelledInterview];
             break;
         case 5:
-            [self.jobmine updateSessionsWithListing:CategoryListingGroupInterview];
+            [self.jobmine updateSessionsWithListing:CategoryListingSinglePersonInterview];
             break;
         case 6:
+            [self.jobmine updateSessionsWithListing:CategoryListingGroupInterview];
+            break;
+        case 7:
             [self.jobmine updateSessionsWithListing:CategoryListingSpecialRequestInterview];
             break;
             
@@ -445,6 +449,7 @@
 - (IBAction)refreshButtomPressed:(UIBarButtonItem *)sender {
     UIActionSheet* refeshSheet = [[UIActionSheet alloc] initWithTitle:@"Category To Refresh" delegate:self cancelButtonTitle:@"Done" destructiveButtonTitle:nil otherButtonTitles:@"re-login",
 								  @"Applocation Short List",
+								  @"Active Application",
 								  @"All Applocation",
 								  @"Cancelled Interview",
 								  @"Interview",

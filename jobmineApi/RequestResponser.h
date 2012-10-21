@@ -10,6 +10,7 @@
 #import "ASIFormDataRequest.h"
 #import "Oracle.h"
 #import "jobmineApi.h"
+#import "SVProgressHUD.h"
 
 @interface RequestResponser : NSObject <ASIHTTPRequestDelegate, OracleResponder>
 

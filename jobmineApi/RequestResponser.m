@@ -37,7 +37,9 @@ NSString*const RequestResponserNotificationEndStateReached = @"RequestResponserN
         [TFHpple insertDataString:self.respondData forCategory:self.requestResponseForCategoryListing withManagedContext:self.jobmine.jobmineDoc.managedObjectContext];
 		
 		if ([self.jobmineDataResponder conformsToProtocol:@protocol(jobmineNetworkDelegate)]) {
-			[self.jobmineDataResponder jobmineLoadDataReachEndState:self.jobmine withHTMLString:[request responseString]];
+			[self.jobmineDataResponder jobmineLoadDataReachEndState:self.jobmine
+													 withHTMLString:[TFHpple insertJobmineApplicationDetail:self.respondData
+																								withContext:self.jobmine.jobmineDoc.managedObjectContext]];
 		}
 		
         [[NSNotificationCenter defaultCenter] postNotificationName:RequestResponserNotificationEndStateReached object:self];
@@ -53,7 +55,7 @@ NSString*const RequestResponserNotificationEndStateReached = @"RequestResponserN
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
-    
+    [SVProgressHUD showErrorWithStatus:@"Network Failure"];
     if (self.isDebug) {
         NSLog(@"%@", [request error]);
     }

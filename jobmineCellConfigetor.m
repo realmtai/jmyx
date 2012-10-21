@@ -49,6 +49,12 @@
 	cell.jobNumberOfOpenningVSNumberOfApplicant.text = [NSString stringWithFormat:@"%@/%@",
 												   ((aDetailedApplication.numberOfOpennings.intValue == 0)?@"?":aDetailedApplication.numberOfOpennings),
 												   ((aDetailedApplication.numberOfApplications.intValue == 0)?@"?":aDetailedApplication.numberOfApplications)];
+	
+	
+	NSDateFormatter* aDateFormator = [NSDateFormatter new];
+	[aDateFormator setDateStyle:NSDateFormatterShortStyle];
+	cell.jobLastDayToApply.text = [aDateFormator stringFromDate:aDetailedApplication.lastDayToApply];
+	
     resultCell = cell;
     return resultCell;
 }
@@ -66,8 +72,13 @@
 	cell.jobNumberOfOpenningVSNumberOfApplicant.text = [NSString stringWithFormat:@"%@/%@",
 														((aDetailedApplication.numberOfOpennings.intValue == 0)?@"?":aDetailedApplication.numberOfOpennings),
 														((aDetailedApplication.numberOfApplications.intValue == 0)?@"?":aDetailedApplication.numberOfApplications)];
+	
+	NSDateFormatter* aDateFormator = [NSDateFormatter new];
+	[aDateFormator setDateStyle:NSDateFormatterShortStyle];
+	
 	cell.jobJobStatus.text = aDetailedApplication.jobStatus;
 	cell.jobApplicationStatus.text = aDetailedApplication.applicationStatus;
+	cell.jobLastDayToApply.text = [aDateFormator stringFromDate:aDetailedApplication.lastDayToApply];
 	
     resultCell = cell;
     return resultCell;
@@ -170,6 +181,7 @@
 			return [self configApplicationShortListCell:aTableView
 								 forDetailedApplication:aApplicationInfo
 								   withTranslationTable:aTranslationTable];
+		case CategoryListingActiveApplicationList:
         case CategoryListingAllApplicationList:
 			return [self configAllApplicationCell:aTableView
 						   forDetailedApplication:aApplicationInfo

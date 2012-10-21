@@ -42,6 +42,15 @@
 						[aResponder fromState:aInputState translatedToState:JobmineRequestTypeAllApplication1 withRequest:aRequest];
 						
 					}else if ([((RequestResponser*)[aPrivousRequest delegate]) requestResponseForCategoryListing] == CategoryListingActiveApplicationList){
+						NSString* ICSID = @"";
+						RequestResponser* tempResp = [aPrivousRequest delegate];
+						ICSID = tempResp.jobmine.ICSID;
+						
+						ASIFormDataRequest* aRequest = [RequestFactory newJobmineRequestWithType:JobmineRequestTypeActiveApplication1 withICSID:ICSID];
+						[aRequest setDelegate:[aPrivousRequest delegate]];
+						[aResponder fromState:aInputState translatedToState:JobmineRequestTypeActiveApplication1 withRequest:aRequest];
+						
+						
 						
 					}
 				}
@@ -175,7 +184,7 @@
             
             if (![nextStep isEqualToString:@""]) {
                 ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
-				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/canceledinterview.xls"]];
+//				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/canceledinterview.xls"]];
                 [nextRequest setDelegate:[aPrivousRequest delegate]];
                 [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
             }else{
@@ -207,7 +216,7 @@
             
             if (![nextStep isEqualToString:@""]) {
                 ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
-				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/interview.xls"]];
+//				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/interview.xls"]];
                 [nextRequest setDelegate:[aPrivousRequest delegate]];
                 [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
             }else{
@@ -239,7 +248,7 @@
             
             if (![nextStep isEqualToString:@""]) {
                 ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
-				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/groupinterview.xls"]];
+//				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/groupinterview.xls"]];
                 [nextRequest setDelegate:[aPrivousRequest delegate]];
                 [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
             }else{
@@ -273,7 +282,40 @@
             
             if (![nextStep isEqualToString:@""]) {
                 ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
-				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/spicalrequestinterview.xls"]];
+				//				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/spicalrequestinterview.xls"]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+		}
+			break;
+			
+			
+		case JobmineRequestTypeActiveApplication1:{
+			
+			
+            NSString *nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"'" andEndingString:@"'"];
+            if (![nextStep isEqualToString:@""]) {
+                
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+                //[nextRequest setRequestCookies:[aPrivousRequest requestCookies]];
+                [nextRequest setDelegate:[aPrivousRequest delegate]];
+                [aResponder fromState:aInputState translatedToState:JobmineRequestTypeActiveApplication2 withRequest:nextRequest];
+            }else{
+                NSLog(@"ps.xls Not Found");
+            }
+			
+			
+		}
+			break;
+		case JobmineRequestTypeActiveApplication2:{
+			
+            NSString* nextStep = [[aPrivousRequest responseString] stringBySearchForStringSegment:@"ps.xls" betweenBeginString:@"\n" andEndingString:@"\r"];
+            
+            if (![nextStep isEqualToString:@""]) {
+                ASIFormDataRequest* nextRequest = [RequestFactory newRequest:RequestTypeStandardPOSTRequest withURL:nextStep];
+//				[nextRequest setURL:[NSURL URLWithString:@"http://localhost/activeapplication.xls"]];
                 [nextRequest setDelegate:[aPrivousRequest delegate]];
                 [aResponder fromState:aInputState translatedToState:JobmineRequestTypeEnd withRequest:nextRequest];
             }else{

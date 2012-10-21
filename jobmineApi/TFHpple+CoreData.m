@@ -23,11 +23,6 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 		case CategoryListingJobApplicationDetail:
 		{
 			
-            NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"//*[@id=\"UW_CO_JOBDTL_VW_UW_CO_JOB_ID\"]"];
-			[self insertJobmineApplicationDetail:[[NSString alloc] initWithData:aJobmineResponse
-																	   encoding:NSUTF8StringEncoding]
-										forJobID:((TFHppleElement*)[arrayOfEle lastObject]).content.intValue
-									 withContext:aContext];
 		}
 			break;
         case CategoryListingApplicationShortList:
@@ -36,7 +31,10 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
             [self updateJobmineListWithLocalCoreData:arrayOfEle forCategory:aCategory withIdCol:0 withManagedContext:aContext];
         }
             break;
-		case CategoryListingActiveApplicationList:
+		case CategoryListingActiveApplicationList:{
+            NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:aJobmineResponse] searchWithXPathQuery:@"/html/body/table/tr"];
+            [self updateJobmineListWithLocalCoreData:arrayOfEle forCategory:aCategory withIdCol:0 withManagedContext:aContext];
+        }
 			//TODO: need to add CategoryListingActiveApplicationList
 			break;
 		case CategoryListingAllApplicationList:{
@@ -64,7 +62,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
         default:
             break;
     }
-    
+    [SVProgressHUD showSuccessWithStatus:@"Update Successful"];
     
     
 }
@@ -72,7 +70,20 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 
 
 
-+ (void) insertJobmineApplicationDetail: (NSString* ) HTMLDataString
++ (NSString* ) insertJobmineApplicationDetail: (NSData* ) HTMLData
+							withContext: (NSManagedObjectContext* ) aContext{
+	
+	NSArray* arrayOfEle = [[TFHpple hppleWithHTMLData:HTMLData] searchWithXPathQuery:@"//*[@id=\"UW_CO_JOBDTL_VW_UW_CO_JOB_ID\"]"];
+	return [self insertJobmineApplicationDetail:[[NSString alloc] initWithData:HTMLData
+															   encoding:NSUTF8StringEncoding]
+								forJobID:((TFHppleElement*)[arrayOfEle lastObject]).content.intValue
+							 withContext:aContext];
+	
+}
+
+
+
++ (NSString* ) insertJobmineApplicationDetail: (NSString* ) HTMLDataString
 							   forJobID: (int) jID
 							withContext: (NSManagedObjectContext* ) aContext{
 	
@@ -85,11 +96,20 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 		NSError* error = nil;
 		NSArray *qResult = [aContext executeFetchRequest:allShortListForDeletation error:&error];
 		if ([qResult count] == 1) {
+			
+			
+			HTMLDataString = [HTMLDataString stringByRemoveContentBetweenStrings:@"<script" andSecondString:@"</script>"];
+			HTMLDataString = [HTMLDataString stringByRemoveContentBetweenStrings:@"<a" andSecondString:@"</a>"];
+			HTMLDataString = [HTMLDataString stringByRemoveContentBetweenStrings:@"<iframe" andSecondString:@"</iframe>"];
+			HTMLDataString = [HTMLDataString stringByRemoveContentBetweenStrings:@"<img" andSecondString:@">"];
+			
+			
 			[(JobmineApplicationDetail*)[qResult lastObject] setJobDescription:HTMLDataString];
+			return HTMLDataString;
 		}
-
+		return @"";
 	}
-	
+	return @"";
 }
 
 
@@ -184,7 +204,16 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
             }
         }
             break;
-		case CategoryListingActiveApplicationList:
+		case CategoryListingActiveApplicationList:{
+            NSNumber* jobmineID = [NSNumber numberWithInt:[((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:0]).content integerValue]];
+            if (jobmineID.intValue != 0) {
+				JobmineInfo* aInfo = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineInfo class])
+																   inManagedObjectContext:aContext];
+				aInfo.jID = jobmineID;
+				aInfo.applicationListing = @(aCategory);
+				aInfo.refreToApplication = [self fetchAndUpdateApplicationDetail:obj forCategory:aCategory withManagedContext:aContext];
+            }
+        }
 			
 			break;
 		case CategoryListingAllApplicationList:{
@@ -289,8 +318,9 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 				NSString* appEmployeeUnit = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content;
 				NSString* appLocation = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
 				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
-				//TODO: add Date conversion
-				//NSDate* appLDTA = nil;
+				NSDateFormatter* aDateFormator = [NSDateFormatter new];
+				[aDateFormator setDateFormat:@"dd MMM yyyy"];
+				NSString* appLDTA = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
 				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:7]).content integerValue]);
 				
 				if (!aDetailedApp) {
@@ -307,6 +337,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 				resultApplicationDetail.employmentUnit = appEmployeeUnit;
 				resultApplicationDetail.employmentLocation = appLocation;
 				resultApplicationDetail.jobStatus = appStatus;
+				resultApplicationDetail.lastDayToApply = [aDateFormator dateFromString:appLDTA];
 				resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
 				return resultApplicationDetail;
 			};
@@ -318,8 +349,45 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 		}
             break;
 			
-		case CategoryListingActiveApplicationList:
-			//TODO: need to add CategoryListingActiveApplicationList
+		case CategoryListingActiveApplicationList:{
+			applicationCreation createAllApplicationListAppFromObject = ^ JobmineApplicationDetail* (TFHppleElement* obj, JobmineApplicationDetail* aDetailedApp, NSManagedObjectContext* aContext){
+				JobmineApplicationDetail* resultApplicationDetail = nil;
+				NSString* appTitle = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:1]).content;
+				NSString* appEmployeeName = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:2]).content;
+				NSString* appEmployeeUnit = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:3]).content;
+				//NSString* appLocation = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
+				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
+				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
+				NSString* appLDTA = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:8]).content;
+				NSDateFormatter* aDateFormator = [NSDateFormatter new];
+				[aDateFormator setDateFormat:@"dd-MMM-yyyy"];
+				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
+				
+				if (!aDetailedApp) {
+					resultApplicationDetail = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([JobmineApplicationDetail class])
+																			inManagedObjectContext:aContext];
+				} else {
+					resultApplicationDetail = aDetailedApp;
+				}
+				resultApplicationDetail.jID = jobmineID;
+				resultApplicationDetail.jobTitle = appTitle;
+				resultApplicationDetail.employer = appEmployeeName;
+				resultApplicationDetail.employmentUnit = appEmployeeUnit;
+				resultApplicationDetail.workingTerm = appWorkTerm;
+				//resultApplicationDetail.employmentLocation = appLocation;
+				resultApplicationDetail.lastDayToApply = [aDateFormator dateFromString:appLDTA];
+				resultApplicationDetail.jobStatus = appStatus;
+				resultApplicationDetail.applicationStatus = appApplicatoinStatus;
+				resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
+				return resultApplicationDetail;
+			};
+			return [self fetchAndUpdateSingleApplicationDetail:obj
+												 withJobmineID:jobmineID
+												   forCategory:aCategory
+											withManagedContext:aContext
+								  withApplicationCreationBlock:createAllApplicationListAppFromObject];
+		}
 			break;
 		case CategoryListingAllApplicationList:
 		{
@@ -332,8 +400,9 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
 				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
 				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
-				//TODO: add Date conversion
-				//NSDate* appLDTA = nil;
+				NSDateFormatter* aDateFormator = [NSDateFormatter new];
+				[aDateFormator setDateFormat:@"dd-MMM-yyyy"];
+				NSString* appLDTA = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:8]).content;
 				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
 				
 				if (!aDetailedApp) {
@@ -349,6 +418,7 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 				resultApplicationDetail.workingTerm = appWorkTerm;
 				//resultApplicationDetail.employmentLocation = appLocation;
 				resultApplicationDetail.jobStatus = appStatus;
+				resultApplicationDetail.lastDayToApply = [aDateFormator dateFromString:appLDTA];
 				resultApplicationDetail.applicationStatus = appApplicatoinStatus;
 				resultApplicationDetail.numberOfApplications = appNumberOfApplicatite;
 				return resultApplicationDetail;
@@ -371,7 +441,6 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 //				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
 //				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
 //				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
-				//TODO: add Date conversion
 				//NSDate* appLDTA = nil;
 				//NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
 				
@@ -511,7 +580,6 @@ typedef JobmineApplicationDetail* (^applicationCreation) (TFHppleElement* obj, J
 //				NSString* appWorkTerm = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:4]).content;
 //				NSString* appStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:5]).content;
 //				NSString* appApplicatoinStatus = ((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:6]).content;
-				//TODO: add Date conversion
 				//NSDate* appLDTA = nil;
 //				NSNumber* appNumberOfApplicatite = @([((TFHppleElement*)[((TFHppleElement*)obj).children objectAtIndex:9]).content integerValue]);
 

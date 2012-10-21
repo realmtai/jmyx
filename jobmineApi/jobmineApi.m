@@ -13,6 +13,7 @@
 #import "JobmineInfo.h"
 #import "JobmineApplicationDetail.h"
 
+
 @interface jobmineApi ()
 
 @property (nonatomic) BOOL isCookieRenewvalNeeded;
@@ -133,6 +134,7 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
                 self.isICSIDRenewvalNeeded = NO;
                 self.ableToAcceptRequest = YES;
                 
+				[SVProgressHUD showSuccessWithStatus:@"Login Successful"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:JobmineNotificationAccpetingRequest object:nil];
             }
         }
@@ -227,7 +229,7 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
 - (void) initJobmineMineRequest: (CategoryListing) aTypeOfRequest withURL: (NSString*) aRequestURL{
 	
     RequestResponser* aResponder = [[RequestResponser alloc] init];
-    aResponder.isDebug = YES;
+//    aResponder.isDebug = YES;
     [aResponder setCurrentRequestState:JobmineRequestTypeStart];
     [aResponder setJobmine:self];
     [aResponder setRequestResponseForCategoryListing:aTypeOfRequest];
@@ -250,8 +252,9 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
             }
                 break;
                 
-            case CategoryListingActiveApplicationList:
-				//TODO: ADD CategoryListingActiveApplicationList
+            case CategoryListingActiveApplicationList:{
+				[self initJobmineMineRequest:aListing withURL:jobmineApplicationListURL];
+			}
                 break;
 			case CategoryListingAllApplicationList:{
 				[self initJobmineMineRequest:aListing withURL:jobmineApplicationListURL];
@@ -293,7 +296,7 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
 		
 		
 		RequestResponser* aResponder = [[RequestResponser alloc] init];
-		aResponder.isDebug = YES;
+		aResponder.isDebug = NO;
 		[aResponder setCurrentRequestState:JobmineRequestTypeEnd];
 		[aResponder setJobmine:self];
 		[aResponder setJobmineDataResponder:ajobmineNetworkDelegate];
