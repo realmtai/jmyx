@@ -74,6 +74,8 @@
 		E8C86C9815E925DB00EE54B3 /* RequestResponser.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C86C9715E925DB00EE54B3 /* RequestResponser.m */; };
 		E8CE6D69162F822B00BC11C2 /* jobmineSingleInterviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE6D68162F822B00BC11C2 /* jobmineSingleInterviewCell.m */; };
 		E8CE6D6D162F866C00BC11C2 /* jobmineGroupedInterviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE6D6C162F866C00BC11C2 /* jobmineGroupedInterviewCell.m */; };
+		E8E5AED11634D39800256B2A /* jobmine@x3.png in Resources */ = {isa = PBXBuildFile; fileRef = E8E5AED01634D39800256B2A /* jobmine@x3.png */; };
+		E8E5AED31634D3FD00256B2A /* jobmine@x4.png in Resources */ = {isa = PBXBuildFile; fileRef = E8E5AED21634D3FD00256B2A /* jobmine@x4.png */; };
 		E8F5154F163393FB00124082 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8F5154C163393FB00124082 /* SVProgressHUD.bundle */; };
 		E8F51550163393FB00124082 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F5154E163393FB00124082 /* SVProgressHUD.m */; };
 		E8FA2A3F16336B0D000FFF41 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8FA2A3E16336B0D000FFF41 /* Settings.bundle */; };
@@ -197,6 +199,8 @@
 		E8CE6D68162F822B00BC11C2 /* jobmineSingleInterviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineSingleInterviewCell.m; sourceTree = "<group>"; };
 		E8CE6D6B162F866C00BC11C2 /* jobmineGroupedInterviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jobmineGroupedInterviewCell.h; sourceTree = "<group>"; };
 		E8CE6D6C162F866C00BC11C2 /* jobmineGroupedInterviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jobmineGroupedInterviewCell.m; sourceTree = "<group>"; };
+		E8E5AED01634D39800256B2A /* jobmine@x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobmine@x3.png"; sourceTree = "<group>"; };
+		E8E5AED21634D3FD00256B2A /* jobmine@x4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobmine@x4.png"; sourceTree = "<group>"; };
 		E8F5154C163393FB00124082 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		E8F5154D163393FB00124082 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		E8F5154E163393FB00124082 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 		E8B376BC15DEEBAA00E2ECD8 = {
 			isa = PBXGroup;
 			children = (
+				E8E5AED21634D3FD00256B2A /* jobmine@x4.png */,
+				E8E5AED01634D39800256B2A /* jobmine@x3.png */,
 				E8FA2A3E16336B0D000FFF41 /* Settings.bundle */,
 				E81C8A131633597300C385D8 /* uitity */,
 				E8700F9415EB47A5000E60DB /* Iphone.storyboard */,
@@ -606,6 +612,8 @@
 				E81C8A181633615600C385D8 /* Default-568h@2x.png in Resources */,
 				E8FA2A3F16336B0D000FFF41 /* Settings.bundle in Resources */,
 				E8F5154F163393FB00124082 /* SVProgressHUD.bundle in Resources */,
+				E8E5AED11634D39800256B2A /* jobmine@x3.png in Resources */,
+				E8E5AED31634D3FD00256B2A /* jobmine@x4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,12 +784,15 @@
 		E8B376FB15DEEBAA00E2ECD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongxin Tai (8U8M698PVY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jobmineApi/Jobmine Mobile.temp_caseinsensitive_rename-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
 				INFOPLIST_FILE = "jobmineApi/jobmine Mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = Jobmine;
+				PROVISIONING_PROFILE = "15BC23FF-A110-4310-8BEB-15585BDEA018";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -789,12 +800,15 @@
 		E8B376FC15DEEBAA00E2ECD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongxin Tai (8U8M698PVY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jobmineApi/Jobmine Mobile.temp_caseinsensitive_rename-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
 				INFOPLIST_FILE = "jobmineApi/jobmine Mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = Jobmine;
+				PROVISIONING_PROFILE = "15BC23FF-A110-4310-8BEB-15585BDEA018";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

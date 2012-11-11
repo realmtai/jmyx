@@ -36,7 +36,7 @@
 - (void) awakeFromNib{
     [super awakeFromNib];
     _jobmine = [[jobmineApi alloc] init];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jobmineAcceptingRequest:) name:JobmineNotificationAccpetingRequest object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jobmineAcceptingRequest:) name:JobmineNotificationAccpetingRequest object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupNSFetchRequestController) name:JobmineNotificationDocumentIsReady object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(askUserForUserNameAndPassWord) name:JobmineNotificationLoginInfoIncorrect object:nil];
 }
@@ -45,7 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.jobmine updateLoginInfo];
+	[self.jobmine updateLoginInfo];
     self.tableView.tableFooterView = [self.tableView dequeueReusableCellWithIdentifier:@"footerView"];
 	
 	
@@ -53,14 +53,19 @@
 
 - (void) viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
-	__block UIWindow* mainWindow = nil;
-	[[[UIApplication sharedApplication] windows] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-		if (obj == self.view.window) {
-			mainWindow = obj;
-		}
-	}];
-	[self addReportBugButtonForWindow:mainWindow withActionResponseObject:self withSelector:@selector(reportBugButtonPressed:)];
-//	[[[UIApplication sharedApplication] keyWindow] bringSubviewToFront:self.reportBugButton];
+//	__block UIWindow* mainWindow = nil;
+//	[[[UIApplication sharedApplication] windows] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//		if (obj == self.view.window) {
+//			mainWindow = obj;
+//		}
+//	}];
+	
+//	NSDate   *creationDate =[[[NSFileManager defaultManager] attributesOfItemAtPath:[[NSBundle mainBundle] pathForResource:@"bug" ofType:@"jpg"] error:nil] fileModificationDate];
+//	NSDate *d =[[NSDate date] dateByAddingTimeInterval:-1*24*60*60];
+//	if ([creationDate compare:d] == NSOrderedAscending)
+//	{
+//		[self addReportBugButtonForWindow:mainWindow withActionResponseObject:self withSelector:@selector(reportBugButtonPressed:)];
+//	}
 }
 
 - (void)viewDidUnload
@@ -327,12 +332,12 @@
     
 }
 
-/*
+
 - (void) jobmineAcceptingRequest: (NSNotification*) aNotification {
     
-    [self.jobmine updateSessionsWithListing:CategoryListingApplicationShortList];
+    [self.jobmine updateSessionsWithListing:CategoryListingAllApplicationList];
 }
-*/
+
 - (NSDictionary*) sectionHeaderTianslationDictionary{
 	if (!_sectionHeaderTianslationDictionary) {
 		_sectionHeaderTianslationDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sectionHeaderTranslationDictionary" ofType:@"plist"]];

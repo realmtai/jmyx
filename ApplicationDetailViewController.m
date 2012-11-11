@@ -96,9 +96,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"standardDisplayCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-	NSString* stringTitle = [[[self ApplicationDetailArray] objectAtIndex:[indexPath item]] name];
+	NSString* stringTitle = [[[self ApplicationDetailArray] objectAtIndex:[indexPath row]] name];
 	
 	id answerToTitle = [[[self jobInfo] refreToApplication] valueForKey:stringTitle];
     
@@ -151,7 +151,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSString* stringTitle = [[[self ApplicationDetailArray] objectAtIndex:[indexPath item]] name];
+	NSString* stringTitle = [[[self ApplicationDetailArray] objectAtIndex:[indexPath row]] name];
 	id answerToTitle = [[[self jobInfo] refreToApplication] valueForKey:stringTitle];
 	[[[UIAlertView alloc] initWithTitle:stringTitle message:[answerToTitle description] delegate:nil cancelButtonTitle:@"kk" otherButtonTitles: nil] show];
 	

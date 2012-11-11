@@ -246,6 +246,7 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
 
 - (void) updateSessionsWithListing: (CategoryListing) aListing{
     if (self.ableToAcceptRequest) {
+		[SVProgressHUD showWithStatus:@"Updating ... "];
         switch (aListing) {
             case CategoryListingApplicationShortList:{
                 [self initJobmineMineRequest:aListing withURL:jobmineApplicationShortListURL];
@@ -280,7 +281,9 @@ NSString*const JobmineUserDefaultPassWord = @"JobmineUserDefaultPassWord";
             default:
                 break;
         }
-    }
+    }else{
+		[SVProgressHUD showErrorWithStatus:@"Fail to login!"];
+	}
 }
 
 
